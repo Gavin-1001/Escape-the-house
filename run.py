@@ -27,6 +27,7 @@ def intro_message():
     terminal_typing_effect("*************************************************\n", 0.025)
     terminal_typing_effect("*************************************************\n", 0.025)
     terminal_typing_effect("ESCAPE THE ATTIC", 0.025)
+    #Find a graphic for here
     terminal_typing_effect("*************************************************\n", 0.025)
     terminal_typing_effect("*************************************************\n", 0.025)
 
@@ -46,7 +47,7 @@ def begin_game():
         This function is the initial function that is called when the user plays the game.
         It introduces the user to the game and provides a storyline,
 
-        The funciton also calls intro
+        The function also calls intro which displays graphic before game starts
     """
 
     intro_message()
@@ -63,14 +64,12 @@ def begin_game():
         else:
             #print("Hello you need a name to start\n")
             break
-
+    terminal_typing_effect(f"Hello {username}, are you ready? Good luck! \n", 0.02)
     userOptionOne()
 
-
-
-
 def userOptionOne():
-    print("UserOPtions1")
+    terminal_typing_effect("You awake to find yourself in a dark, cramped attic", 0.005)
+    terminal_typing_effect("You notice boxes ")
 
 def userOptionTwo():
     print("UserOPtions1")
