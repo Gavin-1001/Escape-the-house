@@ -11,20 +11,69 @@
 
 from colorama import Fore, Back, Style
 
-def welcome_message():
+# imports from helperFunctions.py
+from helperFunctions import terminal_typing_effect
+
+
+
+
+
+def intro_message():
+    """
+        This function is responsible for providing the introduciton graphic when the user starts the game
+    """
+    
+    print()
+    terminal_typing_effect("*************************************************\n", 0.025)
+    terminal_typing_effect("*************************************************\n", 0.025)
+    terminal_typing_effect("ESCAPE THE ATTIC", 0.025)
+    terminal_typing_effect("*************************************************\n", 0.025)
+    terminal_typing_effect("*************************************************\n", 0.025)
+
+
+"""
+    
+
+
+
+"""
+
+
+
+
+def begin_game():
     """
         This function is the initial function that is called when the user plays the game.
         It introduces the user to the game and provides a storyline,
+
+        The funciton also calls intro
     """
+
+    intro_message()
+
+    global username
     while True:
+
         username = input("Hello player, enter your name to begin \n")
-        print(Fore.YELLOW + f"Hello {username}, can you escape the attic")
+        print(Fore.YELLOW + f"Hello {username}, can you escape the attic\n")
 
         if username == "":
-            print("Hello are you there, please enter your name to begin an adventure!")
+            print("Hello!! are you there, please enter your name to begin an adventure!\n")
             continue
         else:
+            #print("Hello you need a name to start\n")
             break
 
-welcome_message()
+    userOptionOne()
 
+
+
+
+def userOptionOne():
+    print("UserOPtions1")
+
+def userOptionTwo():
+    print("UserOPtions1")
+
+def userOptionThree():
+    print("UserOPtions1")
