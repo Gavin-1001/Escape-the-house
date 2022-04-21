@@ -28,3 +28,11 @@ def two_choices(prompt, opt1, opt2, path1, path2):
             print()
             print(f"Please enter a valid option! ({opt1} or {opt2})\n")
             continue
+
+
+def game_complete():
+    print("Game Complete")
+    #Add graphics
+
+def you_died():
+    print("you died")
