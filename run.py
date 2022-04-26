@@ -11,24 +11,26 @@
 
 
 from colorama import Fore, Back, Style
+
+from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title
 
 startGame = input("Would you like to start the game Y/N\n")
 if (startGame == 'y' or startGame == 'Y'):
     while True:
         global playerName
-        playerName = input("Please enter your name")
+        playerName = input("Please enter your name\n")
         print()
         if (playerName == ""):
-            print("You need to enter your name to continue")
+            print("You need to enter your name to continue\n")
             continue
         else:
             break
-    terminal_typing_effect(f"Welcome {playerName}, good luck!", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect(f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
     beginning_title()
     game_intro_log()
 elif startGame == 'n' or startGame == 'N':
-    terminal_typing_effect("Ok, maybe next time!", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Ok, maybe next time!\n", TERMINAL_TYPING_SPEED)
 
 
 
