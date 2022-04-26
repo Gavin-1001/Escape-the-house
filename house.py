@@ -3,13 +3,13 @@ from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, doorA
 
 
 def beginHousePath():
-    terminal_typing_effect("You begin walking up to the steps towards the moss covered door", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You begin walking up to the steps towards the moss covered door\n", TERMINAL_TYPING_SPEED)
     doorArt()
-    terminal_typing_effect('"This door looks like it has been shut for a long time"', TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The door creeks open", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect('"This door looks like it has been shut for a long time"\n', TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("The door creeks open\n", TERMINAL_TYPING_SPEED)
     doorOpen()
-    terminal_typing_effect("You enter the house", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect('"Whoa, this house is huge!"', TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You enter the house\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect('"Whoa, this house is huge!"\n', TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You step into the house\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("The large hallway greets you along with the winding staircase leading to the floor above\n",
                            TERMINAL_TYPING_SPEED)
@@ -33,8 +33,8 @@ def beginHousePath():
 def house_path_1():
     terminal_typing_effect("The door opens \n", TERMINAL_TYPING_SPEED)
     doorOpen()
-    terminal_typing_effect("You walk into the dining room", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("There is a large dining table in the middle of the room", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You walk into the dining room\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("There is a large dining table in the middle of the room\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You notice on the walll a dagger\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect('"This might be handy in the future\n"', TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You equip the dagger\n", TERMINAL_TYPING_SPEED)
@@ -54,7 +54,7 @@ def house_path_2():
     terminal_typing_effect("1. I would like to explore\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("2. No, take me back to the start page\n", TERMINAL_TYPING_SPEED)
 
-    houseUpstairsInput = input("Choose 1/2")
+    houseUpstairsInput = input("Choose 1/2\n")
 
     if(houseUpstairsInput == '1'):
         doorsUpstairs()
@@ -65,12 +65,12 @@ def house_path_2():
         start_game_chose_path()
 
 def doorsUpstairs():
-    terminal_typing_effect("Which door do you want to open?", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#1.Open door 1", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#2.Open door 2", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#3.Open door 3", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Which door do you want to open?\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1.Open door 1\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2.Open door 2\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#3.Open door 3\n", TERMINAL_TYPING_SPEED)
 
-    exploreDoorInput = input("Choose door 1/2/3")
+    exploreDoorInput = input("Choose door 1/2/3\n")
 
     if(exploreDoorInput == '1'):
         openDoor1()
@@ -81,14 +81,15 @@ def doorsUpstairs():
 
 
 def openDoor1():
-    terminal_typing_effect("You open the first door", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The room has a large bed and a musty smell", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You open the first door\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
+
 
 def openDoor2():
-    terminal_typing_effect("You open the second door", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The room has a large bed and a musty smell", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You open the second door\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
 
 def openDoor3():
-    terminal_typing_effect("You open the third door", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The room has a large bed and a musty smell", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You open the third door\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
 
