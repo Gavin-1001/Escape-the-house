@@ -39,5 +39,21 @@ def forestPath2():
     terminal_typing_effect("PATH WITH FLASHLIGHT\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("YOU FOUND A FLASH LIGHT\n",TERMINAL_TYPING_SPEED)
     terminal_typing_effect("FLASH LIGHT STORED IN INVENTORY\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Maybe this path will be the one\n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("As it gets dark it is harder to see `n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You see a flash light lying on the floor", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Do you want to keep the torch \n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("1. To keep the torch", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("2. To leave the torch on the floor", TERMINAL_TYPING_SPEED)
+    print()
+
+    forestInputThree = input("Choose 1/2")
+
+    if(forestInputThree == '1'):
+        terminal_typing_effect("You have put the torch in your pocket", TERMINAL_TYPING_SPEED)
+    elif(forestInputThree == '2'):
+        terminal_typing_effect("You left the torch", TERMINAL_TYPING_SPEED)
+
+
     #Make a story to aquire the torch
     #The torch/flashlight will just be listed as an option in if statement. Use a dict in the future
