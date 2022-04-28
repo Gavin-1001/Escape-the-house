@@ -1,5 +1,6 @@
 from classes import startFight
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, doorArt, doorOpen, house_staircase
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, doorArt, doorOpen, house_staircase, \
+    inventory_array, printInventory
 
 
 def beginHousePath():
@@ -25,6 +26,8 @@ def beginHousePath():
     terminal_typing_effect("#2. Or should we explore upstairs\n", TERMINAL_TYPING_SPEED)
     houseFirstInput = input("Choose 1/2 \n")
 
+
+
     if(houseFirstInput == '1'):
         house_path_1()
     elif(houseFirstInput == '2'):
@@ -35,9 +38,20 @@ def house_path_1():
     doorOpen()
     terminal_typing_effect("You walk into the dining room\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("There is a large dining table in the middle of the room\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("You notice on the walll a dagger\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You notice on the wall a dagger\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect('"This might be handy in the future\n"', TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("You equip the dagger\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Do you want to equip the dagger?\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Equip the dagger\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. Leave the dagger\n", TERMINAL_TYPING_SPEED)
+
+    daggerInput = input("Choose 1/2\n")
+    if(daggerInput == '1'):
+        inventory_array.append("Dagger")
+        #print(inventory_array)
+        printInventory()
+    elif(daggerInput == '2'):
+        terminal_typing_effect("Ok, no dagger for you", TERMINAL_TYPING_SPEED)
+
     terminal_typing_effect("There doesn't seem to be anything of interest in the dining room\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You continue back into the main hall\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You check another room, and encounter a mob\n", TERMINAL_TYPING_SPEED)

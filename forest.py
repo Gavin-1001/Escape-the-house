@@ -1,7 +1,10 @@
 from classes import startFight
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED
 
-hasTorch = False
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inventory_array, printInventory
+
+#from gameIntroLog import start_game_chose_path
+
+
 
 
 def beginForestPath():
@@ -25,11 +28,11 @@ def beginForestPath():
         forestPath2()
 
 
-def forestPath1():
+def forestPath1(): #Use left and right
     terminal_typing_effect("DEAD END\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Ok, let's try the first path to find this stupid drone\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Oh damn it is stating to get dark, better hurry up!\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("You reach the end of the path, it'a dead end, you need to turn back\n",
+    terminal_typing_effect("You reach the end of the path, it's a dead end, you need to turn back\n",
                            TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Do you wish to continue back ot the start or check the second path \n",
                            TERMINAL_TYPING_SPEED)
@@ -42,7 +45,7 @@ def forestPath1():
     if (forestInputTwo == '1'):
         forestPath2()
     elif (forestInputTwo == '2'):
-        from gameIntroLog import start_game_chose_path  # Don't know why but this works, but doesn't work globally
+        from gameIntroLog import start_game_chose_path  # Don't know why but this works, but doesn't work globally, if this cannot be fixed put it down as a bug
         start_game_chose_path()
 
 
@@ -62,19 +65,18 @@ def forestPath2():
 
     if (forestInputThree == '1'):
         terminal_typing_effect("You have put the torch in your pocket\n", TERMINAL_TYPING_SPEED)
-        hasTorch = True
-        hasATorch()
+        inventory_array.append("Torch")
+        printInventory()
     elif (forestInputThree == '2'):
         terminal_typing_effect("You left the torch\n", TERMINAL_TYPING_SPEED)
-        hasTorch = False
-
 
     terminal_typing_effect("The end of the path nears, you see a mob in the distance\n", TERMINAL_TYPING_SPEED)
     startFight()
 
-def hasATorch():
-    terminal_typing_effect("You turn on the flash light continue forward\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect('"It is easier to see now!"\n', TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Do you want to go back to the start?", TERMINAL_TYPING_SPEED)
+    from gameIntroLog import start_game_chose_path
+    start_game_chose_path()
+    print()
 
 
 

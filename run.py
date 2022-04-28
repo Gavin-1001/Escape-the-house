@@ -15,17 +15,18 @@ from colorama import Fore, Back, Style
 from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title
 
+
+
+global playerName
+
 startGame = input("Would you like to start the game Y/N\n")
 if (startGame == 'y' or startGame == 'Y'):
     while True:
-        global playerName
         playerName = input("Please enter your name\n")
-        print()
-        if (playerName == ""):
-            print("You need to enter your name to continue\n")
-            continue
-        else:
+        if playerName.isalpha():
             break
+        terminal_typing_effect("Please only enter characters a-z \n", TERMINAL_TYPING_SPEED)
+
     terminal_typing_effect(f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
     beginning_title()
     game_intro_log()

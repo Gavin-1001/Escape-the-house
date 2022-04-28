@@ -1,5 +1,9 @@
+import os
 import sys
 import time
+
+inventory_array = []
+
 TERMINAL_TYPING_SPEED = 0.0025
 
 def terminal_typing_effect(text, speed):
@@ -92,24 +96,6 @@ def house_staircase():
                             "     .'                                                   `.           \n"
                             "    .'                                                       `.        \n"
                            ,TERMINAL_TYPING_SPEED)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def you_died():
 
     terminal_typing_effect(
@@ -120,6 +106,7 @@ def you_died():
                         "   | | | |__| | |__| |\n"
                         "   |_|  \____/ \____/ \n"
                         , TERMINAL_TYPING_SPEED)
+    print()
     terminal_typing_effect(
                         "_____ _____ ______ _____   \n"
                         "|  __ \_   _|  ____|  __ \ \n"
@@ -128,3 +115,7 @@ def you_died():
                         "| |__| || |_| |____| |__| |\n"
                         "|_____/_____|______|_____/ \n"
                         ,TERMINAL_TYPING_SPEED)
+
+
+def printInventory():
+    print("You inventory:",inventory_array)

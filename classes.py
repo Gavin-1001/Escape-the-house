@@ -1,7 +1,5 @@
 from helperFunctions import you_died, terminal_typing_effect, TERMINAL_TYPING_SPEED
 
-
-
 class player:
     health = 100
     attack = 10
