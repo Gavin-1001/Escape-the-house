@@ -1,6 +1,6 @@
 from forest import beginForestPath
 from graveyard import beginGraveyardPath
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, clearTerminal
 from house import beginHousePath
 
 
@@ -18,6 +18,7 @@ def game_intro_log():
     terminal_typing_effect("Which path will I choose\n", TERMINAL_TYPING_SPEED)
     start_game_chose_path()
 
+
 def start_game_chose_path():
     print()
     terminal_typing_effect("1. The Forest\n", TERMINAL_TYPING_SPEED)
@@ -25,12 +26,14 @@ def start_game_chose_path():
     terminal_typing_effect("3. The Graveyard\n", TERMINAL_TYPING_SPEED)
     firstUserInput = input("Choose a path\n")
 
-    if(firstUserInput == '1'):
+    if (firstUserInput == '1'):
         beginForestPath()
-    elif(firstUserInput == '2'):
+    elif (firstUserInput == '2'):
         beginHousePath()
-    elif(firstUserInput == '3'):
+    elif (firstUserInput == '3'):
         beginGraveyardPath()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        start_game_chose_path()
+    clearTerminal()
     print()

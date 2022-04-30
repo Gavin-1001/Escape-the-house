@@ -1,6 +1,9 @@
 import os
 import sys
 import time
+
+
+
 inventory_array = []
 
 TERMINAL_TYPING_SPEED = 0.0025
@@ -114,6 +117,8 @@ def you_died():
                         "| |__| || |_| |____| |__| |\n"
                         "|_____/_____|______|_____/ \n"
                         ,TERMINAL_TYPING_SPEED)
+    from classes import exitMessage
+    exitMessage()
 def showGraves():
     print("      ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.     _     ,-=-.   ,-=-.      ")
     print("     /  +  \ /  +  \ /  +  \ /  +  \ /  +  \  _|1|_  /  +  \ /  +  \     ")

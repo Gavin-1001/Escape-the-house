@@ -1,5 +1,6 @@
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, showGraves, inventory_array, you_died
 
+alreadyDownNorthPath = False
 
 def beginGraveyardPath():
     terminal_typing_effect("You approach the entrance of the graveyard\n", TERMINAL_TYPING_SPEED)
@@ -38,8 +39,10 @@ def beginGraveyardPath():
         droneBattery()
         terminal_typing_effect("The drone sounds like it is coming from the north east\n", TERMINAL_TYPING_SPEED)
     elif(graveyardMainListenForDrone == 'n'):
-        terminal_typing_effect("Sure, best to save the battey until you get closer\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("Sure, best to save the battery until you get closer\n", TERMINAL_TYPING_SPEED)
+    graveyardPaths()
 
+def graveyardPaths():
     terminal_typing_effect("Which path do you want to try?\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#1. WEST\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#2. NORTH\n", TERMINAL_TYPING_SPEED)
@@ -91,6 +94,7 @@ def graveyardWestPath1():
 
 
 def graveyardNorthPath():
+    alreadyDownNorthPath = True
     terminal_typing_effect("You chose the NORTH path\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("As you get closer to the drone, you see that the signal is getting stronger\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You find the drone by pushing the throttle and listening out for it\n", TERMINAL_TYPING_SPEED)
@@ -98,11 +102,11 @@ def graveyardNorthPath():
     terminal_typing_effect("YES\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("NO\n", TERMINAL_TYPING_SPEED)
     listenForDrone = input("Choose yes/no from above\n").lower()
+    #put a check on this if/elif block to check alpha character only
     if(listenForDrone == 'yes'):
         droneBattery()
     elif (listenForDrone == 'no'):
         terminal_typing_effect("Ok\n", TERMINAL_TYPING_SPEED)
-
 
 
 def droneBattery():
@@ -114,12 +118,30 @@ def droneBattery():
     terminal_typing_effect("You need to be careful when using the drone battery\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect(f"Battery charge {droneBattery}\n", TERMINAL_TYPING_SPEED)
 
-
-
-
+    terminal_typing_effect("After listening for the drone, it seems to be coming from the east path\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You carefully walk back to the main paths\n",TERMINAL_TYPING_SPEED)
+    graveyardPaths()
+    exit()
 
 def graveyardEastPath():
-    print()
+    terminal_typing_effect("This is the winning path", TERMINAL_TYPING_SPEED)
+    if(alreadyDownNorthPath == True):
+        terminal_typing_effect("This is true\n",TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("Ok, the drone has to be down this path\n", TERMINAL_TYPING_SPEED)
+    else:
+        terminal_typing_effect("This is false\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("Let\'s try this path \n ", TERMINAL_TYPING_SPEED)
+    
+    terminal_typing_effect('"I think I should listen for the drone again"\n', TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Yes\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. No\n", TERMINAL_TYPING_SPEED)
+
+    eastPathListenForDrone = input("Do you want to listen for the drone again\n").lower()
+
+    if(eastPathListenForDrone == 'yes'):
+        droneBattery()
+    elif(eastPathListenForDrone == 'no'):
+        terminal_typing_effect("ok, it may be a little harder to find the drone\n", TERMINAL_TYPING_SPEED)
 
 
 

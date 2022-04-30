@@ -18,7 +18,6 @@ from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, begin
 
 
 global playerName
-
 startGame = input("Would you like to start the game Y/N\n")
 if (startGame == 'y' or startGame == 'Y'):
     while True:

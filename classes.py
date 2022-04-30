@@ -1,5 +1,6 @@
 from helperFunctions import you_died, terminal_typing_effect, TERMINAL_TYPING_SPEED
 
+
 """
 class player:
     health = 100
@@ -57,3 +58,12 @@ def attack():
             print("You have killed the mob, your health is", player.health, '\n')
         elif (player.health <= 0):
             you_died()
+
+def exitMessage():
+    terminal_typing_effect("Thanks for playing!!\n", TERMINAL_TYPING_SPEED)
+
+    playAgain = input("Do you want to play again? Yes/No\n").lower()
+    if(playAgain == 'yes'):
+        print()
+    elif(playAgain == 'no'):
+        terminal_typing_effect("Thanks for playing!\n", TERMINAL_TYPING_SPEED)
