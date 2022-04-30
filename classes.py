@@ -1,5 +1,6 @@
 from helperFunctions import you_died, terminal_typing_effect, TERMINAL_TYPING_SPEED
 
+"""
 class player:
     health = 100
     attack = 10
@@ -12,11 +13,23 @@ class mob():
     def show(self):
         print(self.health)
         print(self.attack)
+        #This works just testing 
+"""
+
+
+class Player():
+    def __init__(self, health, attack):
+        self.health = health
+        self.attack = attack
+
+
+player = Player(100, 10)
+mob = Player(20, 2)
 
 
 def startFight():
-    print("The mobs health is ", mob.health, "with an attack of ", mob.attack,'\n')
-    print("Your current health is ", player.health, "with an attack of", player.attack,'\n')
+    print("The mobs health is ", mob.health, "with an attack of ", mob.attack, '\n')
+    print("Your current health is ", player.health, "with an attack of", player.attack, '\n')
 
     terminal_typing_effect("Would you like to FIGHT the mob or RUN\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#1 Fight\n", TERMINAL_TYPING_SPEED)
@@ -40,7 +53,6 @@ def attack():
         print("The mob has ", mob.health, "points left", TERMINAL_TYPING_SPEED, '\n')
 
         if (mob.health <= 0):
-            print("You have killed the mob, your health is", player.health,'\n')
+            print("You have killed the mob, your health is", player.health, '\n')
         elif (player.health <= 0):
-            print()
             you_died()
