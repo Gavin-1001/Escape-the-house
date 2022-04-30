@@ -104,6 +104,11 @@ def openDoor2():
     terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
 
 def openDoor3():
-    terminal_typing_effect("You open the third door\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
-
+    if("key" in inventory_array):
+        print("You have the key")
+    else:
+        print("You do not have the key in the inventory")
+        print("Inventory contains", inventory_array)
+        print()
+        from gameIntroLog import start_game_chose_path
+        start_game_chose_path()

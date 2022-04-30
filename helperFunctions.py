@@ -24,13 +24,16 @@ def beginning_title():
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#           ESCAPE THE ATTIC          #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#           Gavin Shelley             #\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#            Gavin Shelley            #\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#######################################\n", TERMINAL_TYPING_SPEED)
     print()
 
 
 def doorArt():
+    #https://ascii.co.uk/art/doors
     terminal_typing_effect("            __________ \n"
                            "           |  __  __  |\n"
                            "           | |  ||  | |\n"
@@ -47,6 +50,7 @@ def doorArt():
     print()
 
 def doorOpen():
+    #https://ascii.co.uk/art/doors
     terminal_typing_effect(" ______________   \n"
                            "|\ ___________ /| \n"
                            "| |  /|,| |   | | \n"
@@ -67,6 +71,7 @@ def doorOpen():
 
 
 def house_staircase():
+    #https://ascii.co.uk/art/stairs
     terminal_typing_effect(
                             "         -     -                 .      :                              \n"
                             "         -     -     -                  |          -                   \n"
@@ -99,7 +104,9 @@ def house_staircase():
                             "    .'                                                       `.        \n"
                            ,TERMINAL_TYPING_SPEED)
 def you_died():
-
+#Change the font and text size
+##http://www.network-science.de/ascii/
+# Ascii character generator
     terminal_typing_effect(
                         "__     ______  _    _ \n"
                         "\ \   / / __ \| |  | |\n"
@@ -119,6 +126,7 @@ def you_died():
                         ,TERMINAL_TYPING_SPEED)
     from classes import exitMessage
     exitMessage()
+
 def showGraves():
     print("      ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.     _     ,-=-.   ,-=-.      ")
     print("     /  +  \ /  +  \ /  +  \ /  +  \ /  +  \  _|1|_  /  +  \ /  +  \     ")
@@ -143,6 +151,52 @@ def printInventory():
 
 def clearTerminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def you_win():
+    ##http://www.network-science.de/ascii/
+    #Ascii character generator
+    terminal_typing_effect(""
+                           "                            _       "
+                           "                           (_)      "
+                           " _   _  ___  _   _    _ _ _ _ ____  "
+                           "| | | |/ _ \| | | |  | | | | |  _ \ "
+                           "| |_| | |_| | |_| |  | | | | | | | |"
+                           " \__  |\___/|____/    \___/|_|_| |_|"
+                           "(____/                              "
+                           , TERMINAL_TYPING_SPEED)
+
+def graveyard_entrance_gate():
+    #https://ascii.co.uk/art/gates
+    terminal_typing_effect(""
+                           "                  _  /)"
+                           "                 mo / )"
+                           "                 |/)\)"
+                           "                  /\_"
+                           "                  \__|="
+                           "                 (    )"
+                           "                 __)(__"
+                           "_________+______/      \______+__________"
+                           "  __--   |       R.I.P.       |-_-- __"
+                           "_-- -    | ___ __________ ___ |"
+                           "-_-- __  || | | | {|    /| | || __---   -_"
+                           " --__-   || | | | {|   /|| | ||--        -"
+                           "         || | | | {|  /||| | ||__--"
+                           " __-- -__|| | | | {| |}||| | ||--   __--"
+                           "         ||_|_|_|_{| |}|||_|_||  -__"
+                           " --__-  -|| | | | {& |}||/ | ||---   __--"
+                           "         || | | | {| |}|/| | ||-__"
+                           "--   __--|| | | | {| |}/|| | ||__-- -___"
+                           "  --     || | | | {| &}||| | ||   __"
+                           "---   __-|| | | | {| |}||| | ||_---__-   --"
+                           " -  -_   || | | | {| |}||| | || --"
+                           " __ejm 97|| | | | {| |}||| | ||_--__-   _---"
+                           "_________||_|_|_|_{| |}|||_|_||______________"
+                           "                     |}|/"
+                           "                     |}/"
+                           "                     |/"
+                           , TERMINAL_TYPING_SPEED)
+
 
 
 

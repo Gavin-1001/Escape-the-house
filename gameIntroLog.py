@@ -9,7 +9,7 @@ def game_intro_log():
     terminal_typing_effect("Created by Gavin Shelley\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You approach the drive to the house\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect('"How did the drone end up here?"\n', TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The house has been vaciant for 50 years or so\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("The house has been vacant for 50 years or so\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("I vaguely remember the story in the newspaper about the newly wed couple who bought the "
                            "house \n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("They looked so happy in the newspaper\n", TERMINAL_TYPING_SPEED)

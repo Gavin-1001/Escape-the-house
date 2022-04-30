@@ -1,4 +1,5 @@
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, showGraves, inventory_array, you_died
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, showGraves, inventory_array, you_died, \
+    you_win, graveyard_entrance_gate
 
 alreadyDownNorthPath = False
 
@@ -140,8 +141,36 @@ def graveyardEastPath():
 
     if(eastPathListenForDrone == 'yes'):
         droneBattery()
+        terminal_typing_effect("You hear the drone much clearer now \n", TERMINAL_TYPING_SPEED)
+        foundDrone()
     elif(eastPathListenForDrone == 'no'):
         terminal_typing_effect("ok, it may be a little harder to find the drone\n", TERMINAL_TYPING_SPEED)
+
+def foundDrone():
+    terminal_typing_effect("You walk further down and notice it in a tree\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect('"I found it!!"\n', TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Ok, lets try and get out of here \n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You continue down the path and come to a fork in the path\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You just want to get out of here\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Choose a path\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Left\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. Right\n", TERMINAL_TYPING_SPEED)
+
+    foundDroneInput = input("Choose a path\n")
+
+    if(foundDroneInput == '1'):
+        terminal_typing_effect("Now that you have found the drone it is time to get out of here\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect('"The flashlight is running out of battery, so I better hurry"\n', TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("You begin to run, before the flash light runs out\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("While running you trip on your shoe laces and die of a concussion\n", TERMINAL_TYPING_SPEED)
+        you_died()
+
+    elif(foundDroneInput == '2'):
+        terminal_typing_effect("You turn on your flashlight\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("You approach the graveyard gates\n", TERMINAL_TYPING_SPEED)
+        graveyard_entrance_gate()
+        terminal_typing_effect("With the drone in your hand you push the cemetery gate open, and vow never to return\n", TERMINAL_TYPING_SPEED)
+        you_win()
 
 
 
