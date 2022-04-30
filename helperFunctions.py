@@ -1,7 +1,6 @@
 import os
 import sys
 import time
-
 inventory_array = []
 
 TERMINAL_TYPING_SPEED = 0.0025
@@ -139,4 +138,8 @@ def printInventory():
 
 def clearTerminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+
+
 
