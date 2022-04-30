@@ -1,6 +1,7 @@
 from classes import startFight
-
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inventory_array, printInventory
+import os
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inventory_array, printInventory, \
+    clearTerminal
 
 #from gameIntroLog import start_game_chose_path
 
@@ -8,6 +9,7 @@ from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inven
 
 
 def beginForestPath():
+    clearTerminal()
     terminal_typing_effect("Entering the forest, gotta be careful for wild animals as it gets dark",
                            TERMINAL_TYPING_SPEED)
     terminal_typing_effect("I don't think the kite ended up this far, but maybe it did\n", TERMINAL_TYPING_SPEED)
@@ -65,7 +67,7 @@ def forestPath2():
 
     if (forestInputThree == '1'):
         terminal_typing_effect("You have put the torch in your pocket\n", TERMINAL_TYPING_SPEED)
-        inventory_array.append("Torch")
+        inventory_array.append("torch")
         printInventory()
     elif (forestInputThree == '2'):
         terminal_typing_effect("You left the torch\n", TERMINAL_TYPING_SPEED)
@@ -76,7 +78,7 @@ def forestPath2():
     terminal_typing_effect("Do you want to go back to the start?", TERMINAL_TYPING_SPEED)
     from gameIntroLog import start_game_chose_path
     start_game_chose_path()
-    print()
+
 
 
 

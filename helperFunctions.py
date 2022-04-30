@@ -115,7 +115,28 @@ def you_died():
                         "| |__| || |_| |____| |__| |\n"
                         "|_____/_____|______|_____/ \n"
                         ,TERMINAL_TYPING_SPEED)
+def showGraves():
+    print("      ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.     _     ,-=-.   ,-=-.      ")
+    print("     /  +  \ /  +  \ /  +  \ /  +  \ /  +  \  _|1|_  /  +  \ /  +  \     ")
+    print("     | ~~~ | | ~~~ | | ~~~ | | ~~~ | | ~~~ | |_ H _| | ~~~ | | ~~~ |     ")
+    print("     |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P|   |S|   |R.I.P| |R.I.P|     ")
+    print("     |_____| |_____| |_____| |_____| |_____|   |_|   |_____| |_____|     ")
+
+
+
+    print("      ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.      ")
+    print("     /  +  \ /  +  \ /  +  \ /  +  \ /  +  \ /  +  \ /  +  \ /  +  \     ")
+    print("     | ~~~ | | ~~~ | | ~~~ | | ~~~ | | ~~~ | | ~~~ | | ~~~ | | ~~~ |     ")
+    print("     |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P|     ")
+    print("     |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____|     ")
+
+
 
 
 def printInventory():
     print("You inventory:",inventory_array)
+    
+
+def clearTerminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
