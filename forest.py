@@ -64,13 +64,16 @@ def forestPath2():
     print()
 
     forestInputThree = input("Choose 1/2\n")
+    if('torch' in inventory_array):
+        terminal_typing_effect("You already have the torch in your inventory!", TERMINAL_TYPING_SPEED)
 
-    if (forestInputThree == '1'):
-        terminal_typing_effect("You have put the torch in your pocket\n", TERMINAL_TYPING_SPEED)
-        inventory_array.append("torch")
-        printInventory()
-    elif (forestInputThree == '2'):
-        terminal_typing_effect("You left the torch\n", TERMINAL_TYPING_SPEED)
+    else:
+        if (forestInputThree == '1'):
+            terminal_typing_effect("You have put the torch in your pocket\n", TERMINAL_TYPING_SPEED)
+            inventory_array.append("torch")
+            printInventory()
+        elif (forestInputThree == '2'):
+            terminal_typing_effect("You left the torch\n", TERMINAL_TYPING_SPEED)
 
     terminal_typing_effect("The end of the path nears, you see a mob in the distance\n", TERMINAL_TYPING_SPEED)
     startFight()

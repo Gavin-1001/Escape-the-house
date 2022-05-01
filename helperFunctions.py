@@ -240,14 +240,18 @@ def openDrawer3():
     terminal_typing_effect("#2. Leave the key\n", TERMINAL_TYPING_SPEED)
     putKeyInInventory = input("Choose 1/2 from above\n")
 
-    if(putKeyInInventory == '1'):
-        inventory_array.append("key")
-        terminal_typing_effect("The key is in your inventory\n", TERMINAL_TYPING_SPEED)
-        printInventory()
-        #if statement to check if the player already has the key in inventory, incase they come back again
+    if("key" in inventory_array):
+        terminal_typing_effect("You already have the key in your inventory\n", TERMINAL_TYPING_SPEED)
 
-    elif(putKeyInInventory == '2'):
-        terminal_typing_effect("You have chosen to leave the key there\n",TERMINAL_TYPING_SPEED)
+    else:
+        if(putKeyInInventory == '1'):
+            inventory_array.append("key")
+            terminal_typing_effect("The key is in your inventory\n", TERMINAL_TYPING_SPEED)
+            printInventory()
+            #if statement to check if the player already has the key in inventory, incase they come back again
+
+        elif(putKeyInInventory == '2'):
+            terminal_typing_effect("You have chosen to leave the key there\n",TERMINAL_TYPING_SPEED)
 
     terminal_typing_effect("You walk out of the dining room, and back into the hall\n", TERMINAL_TYPING_SPEED)
     from house import beginHousePath

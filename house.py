@@ -43,14 +43,17 @@ def house_path_1():
     terminal_typing_effect("Do you want to equip the dagger?\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#1. Equip the dagger\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#2. Leave the dagger\n", TERMINAL_TYPING_SPEED)
-
+    
     daggerInput = input("Choose 1/2\n")
-    if(daggerInput == '1'):
-        inventory_array.append("Dagger")
-        #print(inventory_array)
-        printInventory()
-    elif(daggerInput == '2'):
-        terminal_typing_effect("Ok, no dagger for you", TERMINAL_TYPING_SPEED)
+    if("dagger" in inventory_array):
+        terminal_typing_effect("You already have the dagger in your inventory\n!", TERMINAL_TYPING_SPEED)
+    else:
+        if(daggerInput == '1'):
+            inventory_array.append("dagger")
+            #print(inventory_array)
+            printInventory()
+        elif(daggerInput == '2'):
+            terminal_typing_effect("Ok, no dagger for you", TERMINAL_TYPING_SPEED)
 
     searchDiningRoom()
 
@@ -101,10 +104,14 @@ def openDoor2():
 def openDoor3():
     if("key" in inventory_array):
         terminal_typing_effect("You enter the room 3, and see a map in the room", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("There is nothing in this room", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("You return back onto the upstairs landing\n", TERMINAL_TYPING_SPEED)
+        doorsUpstairs()
         #
     else:
-        print("You do not have the key in the inventory")
-        print("Inventory contains", inventory_array)
+        terminal_typing_effect("You do not have the key in your inventory. Find the key to open this door\n", TERMINAL_TYPING_SPEED)
+        print("Inventory: ", inventory_array)
+        terminal_typing_effect("You need a key to enter this room!!\n", TERMINAL_TYPING_SPEED)
         print()
         from gameIntroLog import start_game_chose_path
         start_game_chose_path()
