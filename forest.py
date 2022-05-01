@@ -5,9 +5,9 @@ from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inven
 
 def beginForestPath():
     #clearTerminal()
-    terminal_typing_effect("Entering the forest, gotta be careful for wild animals as it gets dark",
+    terminal_typing_effect("Entering the forest, gotta be careful for wild animals as it gets dark\n",
                            TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("I don't think the kite ended up this far, but maybe it did\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("I don't think the drone ended up this far, but maybe it did\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("HUH\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("That's strange\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect(
@@ -23,6 +23,9 @@ def beginForestPath():
         forestPath1()
     elif (forestInputOne == '2'):
         forestPath2()
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        beginForestPath()
 
 
 def forestPath1():  #Use left and right
@@ -45,6 +48,9 @@ def forestPath1():  #Use left and right
         # Don't know why but this works, but doesn't work globally, if this cannot be fixed put it down as a bug
         from gameIntroLog import start_game_chose_path
         start_game_chose_path()
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        forestPath1()
 
 
 def forestPath2():
@@ -70,6 +76,9 @@ def forestPath2():
             printInventory()
         elif (forestInputThree == '2'):
             terminal_typing_effect("You left the torch\n", TERMINAL_TYPING_SPEED)
+        else:
+            terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+            forestPath2()
 
     terminal_typing_effect("The end of the path nears, you see a mob in the distance\n", TERMINAL_TYPING_SPEED)
     startFight()

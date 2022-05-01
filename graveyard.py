@@ -22,6 +22,10 @@ def beginGraveyardPath():
             terminal_typing_effect("You do not have a torch in your inventory\n", TERMINAL_TYPING_SPEED)
     elif(useFlashlight == '2'):
         terminal_typing_effect("You chose not to use a torch\n", TERMINAL_TYPING_SPEED)
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        beginGraveyardPath()
+
 
     terminal_typing_effect("As you look around, you realize the size of the graveyard \n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect('The drone had to of landed in here\n', TERMINAL_TYPING_SPEED)
@@ -41,7 +45,11 @@ def beginGraveyardPath():
         terminal_typing_effect("The drone sounds like it is coming from the north east\n", TERMINAL_TYPING_SPEED)
     elif(graveyardMainListenForDrone == 'n'):
         terminal_typing_effect("Sure, best to save the battery until you get closer\n", TERMINAL_TYPING_SPEED)
-    graveyardPaths()
+        graveyardPaths()
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        beginGraveyardPath()
+
 
 def graveyardPaths():
     terminal_typing_effect("Which path do you want to try?\n", TERMINAL_TYPING_SPEED)
@@ -63,6 +71,10 @@ def graveyardPaths():
         graveyardNorthPath()
     elif(graveyardInputPath == '3'):
         graveyardEastPath()
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        graveyardPaths()
+
 
 def graveyardWestPath():
     #mob path with dead end
@@ -76,12 +88,12 @@ def graveyardWestPath1():
     terminal_typing_effect("The tree line covers moon light\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("The batteries in the torch suddenly die\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Do you want to continue walking?\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("Yes\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("No\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Yes\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. No\n", TERMINAL_TYPING_SPEED)
 
     continueWalking = input("Choose yes/no\n")
     
-    if(continueWalking == 'yes'):
+    if(continueWalking == '1'):
         terminal_typing_effect("You continue walking in the dark\n", TERMINAL_TYPING_SPEED)
         terminal_typing_effect("You fall in a hole in the ground and die\n", TERMINAL_TYPING_SPEED)
         you_died()
@@ -89,6 +101,10 @@ def graveyardWestPath1():
         terminal_typing_effect("You turn around and proceed to walk back to where the paths fork\n", TERMINAL_TYPING_SPEED)
         terminal_typing_effect("You trip over rock on the ground and split your head open, lose consciousness and die\n ", TERMINAL_TYPING_SPEED)
         you_died()
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        graveyardWestPath1()
+
 
 
 def graveyardNorthPath():
@@ -105,7 +121,9 @@ def graveyardNorthPath():
         droneBattery()
     elif (listenForDrone == 'no'):
         terminal_typing_effect("Ok\n", TERMINAL_TYPING_SPEED)
-
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        graveyardNorthPath()
 
 def droneBattery():
     droneBattery = 100
@@ -142,6 +160,10 @@ def graveyardEastPath():
         foundDrone()
     elif(eastPathListenForDrone == 'no'):
         terminal_typing_effect("ok, it may be a little harder to find the drone\n", TERMINAL_TYPING_SPEED)
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        graveyardEastPath()
+
 
 def foundDrone():
     terminal_typing_effect("You walk further down and notice it in a tree\n", TERMINAL_TYPING_SPEED)
@@ -169,6 +191,10 @@ def foundDrone():
         terminal_typing_effect("With the drone in your hand you push the cemetery gate open, and vow never to return\n", TERMINAL_TYPING_SPEED)
         you_win()
 
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        print("There  was an error", ValueError)
+        foundDrone()
 
 
         

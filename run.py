@@ -16,16 +16,24 @@ from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title
 
 global playerName
-startGame = input("Would you like to start the game Y/N\n")
-if (startGame == 'y' or startGame == 'Y'):
-    while True:
-        playerName = input("Please enter your name\n")
-        if playerName.isalpha():
-            break
-        terminal_typing_effect("Please only enter characters a-z \n", TERMINAL_TYPING_SPEED)
+def startGame():
+    startGame = input("Would you like to start the game Y/N\n").lower()
 
-    terminal_typing_effect(f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
-    beginning_title()
-    game_intro_log()
-elif startGame == 'n' or startGame == 'N':
-    terminal_typing_effect("Ok, maybe next time!\n", TERMINAL_TYPING_SPEED)
+    if (startGame == 'y'):
+        while True:
+            playerName = input("Please enter your name\n").lower()
+            if playerName.isalpha():
+                break
+            terminal_typing_effect("Please only enter characters a-z \n", TERMINAL_TYPING_SPEED)
+
+        terminal_typing_effect(f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
+        beginning_title()
+        game_intro_log()
+    elif (startGame == 'n'):
+        terminal_typing_effect("Ok, maybe next time!\n", TERMINAL_TYPING_SPEED)
+
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        startGame()
+
+startGame()

@@ -1,4 +1,3 @@
-from classes import startFight
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, doorArt, doorOpen, house_staircase, \
     inventory_array, printInventory, searchDiningRoom
 
@@ -21,17 +20,25 @@ def beginHousePath():
     terminal_typing_effect('"Damn, all the doors are locked, let me try this last one"\n', TERMINAL_TYPING_SPEED)
     terminal_typing_effect('"A ha" you shout\n', TERMINAL_TYPING_SPEED)
     terminal_typing_effect("It looks like you opened the dining room door\n", TERMINAL_TYPING_SPEED)
+    houseEntranceOptions()
+
+def houseEntranceOptions():
     terminal_typing_effect("Choose from the options below \n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#1. Do you want to go in?\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Do you want to go into the dining room?\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#2. Or should we explore upstairs\n", TERMINAL_TYPING_SPEED)
-    houseFirstInput = input("Choose 1/2 \n")
-
-
+    terminal_typing_effect("#3. Go outside\n", TERMINAL_TYPING_SPEED)
+    houseFirstInput = input("Choose 1/2/3 \n")
 
     if(houseFirstInput == '1'):
         house_path_1()
     elif(houseFirstInput == '2'):
         house_path_2()
+    elif (houseFirstInput == '3'):
+        from gameIntroLog import start_game_chose_path
+        start_game_chose_path()
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        houseEntranceOptions()
 
 def house_path_1():
     terminal_typing_effect("The door opens \n", TERMINAL_TYPING_SPEED)
@@ -46,7 +53,7 @@ def house_path_1():
     
     daggerInput = input("Choose 1/2\n")
     if("dagger" in inventory_array):
-        terminal_typing_effect("You already have the dagger in your inventory\n!", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("You already have the dagger in your inventory!\n", TERMINAL_TYPING_SPEED)
     else:
         if(daggerInput == '1'):
             inventory_array.append("dagger")
@@ -54,29 +61,35 @@ def house_path_1():
             printInventory()
         elif(daggerInput == '2'):
             terminal_typing_effect("Ok, no dagger for you", TERMINAL_TYPING_SPEED)
+        else:
+            terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+            house_path_1()
 
+    terminal_typing_effect("You continue searching around the dining room\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("There is a set of drawers to your left, do you want to open them\n", TERMINAL_TYPING_SPEED)
     searchDiningRoom()
-
-
 
 def house_path_2():
     terminal_typing_effect("You take a minute to admire the grand staircase that is before you\n", TERMINAL_TYPING_SPEED)
     house_staircase()
     terminal_typing_effect("You get to the top of the stairs\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("There are multiple doors here\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("There are 3 rooms here\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Would you like to explore the rooms\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("1. I would like to explore\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("2. No, take me back to the start page\n", TERMINAL_TYPING_SPEED)
+    exploreRoomsGoDownstairs()
 
+def exploreRoomsGoDownstairs():
+    terminal_typing_effect("1. Explore the rooms\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("2. No, take me back downstairs\n", TERMINAL_TYPING_SPEED)
     houseUpstairsInput = input("Choose 1/2\n")
-
     if(houseUpstairsInput == '1'):
         doorsUpstairs()
 
-
     elif(houseUpstairsInput == '2'):
-        from gameIntroLog import start_game_chose_path
-        start_game_chose_path()
+        houseEntranceOptions()
+
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        exploreRoomsGoDownstairs()
 
 def doorsUpstairs():
     terminal_typing_effect("Which door do you want to open?\n", TERMINAL_TYPING_SPEED)
@@ -92,15 +105,22 @@ def doorsUpstairs():
         openDoor2()#this room has a mob
     elif(exploreDoorInput == '3'):
         openDoor3() #this room has the map to the end
+    else:
+        terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
+        doorsUpstairs()
 
 
 def openDoor1():
     terminal_typing_effect("You open the first door\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
+    doorsUpstairs()
 
 
 def openDoor2():
     terminal_typing_effect("You open the second door\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You come back out into the landing\n", TERMINAL_TYPING_SPEED)
+    doorsUpstairs()
+
 def openDoor3():
     if("key" in inventory_array):
         terminal_typing_effect("You enter the room 3, and see a map in the room", TERMINAL_TYPING_SPEED)
@@ -112,8 +132,6 @@ def openDoor3():
         terminal_typing_effect("You do not have the key in your inventory. Find the key to open this door\n", TERMINAL_TYPING_SPEED)
         print("Inventory: ", inventory_array)
         terminal_typing_effect("You need a key to enter this room!!\n", TERMINAL_TYPING_SPEED)
-        print()
-        from gameIntroLog import start_game_chose_path
-        start_game_chose_path()
-
+        terminal_typing_effect("Go find the key!\n", TERMINAL_TYPING_SPEED)
+        exploreRoomsGoDownstairs()
 #create function that brings user to three doors downstairs

@@ -29,6 +29,7 @@ mob = Player(20, 2)
 #mobHouse = Player(40,5)
 
 
+
 def startFight():
     print("The mobs health is ", mob.health, "with an attack of ", mob.attack, '\n')
     print("Your current health is ", player.health, "with an attack of", player.attack, '\n')
