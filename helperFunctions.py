@@ -2,8 +2,6 @@ import os
 import sys
 import time
 
-
-
 inventory_array = []
 
 TERMINAL_TYPING_SPEED = 0.0025
@@ -45,8 +43,7 @@ def doorArt():
                            "           | |  ||  | |\n"
                            "           | |  ||  | |\n"
                            "           | |__||__| |\n"
-                           "           |__________|\n"
-                           , TERMINAL_TYPING_SPEED)
+                           "           |__________|\n", TERMINAL_TYPING_SPEED)
     print()
 
 def doorOpen():
@@ -65,8 +62,7 @@ def doorOpen():
                            "| |       |   | | \n"
                            "| |      ,'   | | \n"
                            "| |   ,'      | | \n"
-                           "|_|,'_________|_| \n"
-                           , TERMINAL_TYPING_SPEED)
+                           "|_|,'_________|_| \n", TERMINAL_TYPING_SPEED)
     print()
 
 
@@ -101,20 +97,18 @@ def house_staircase():
                             "          _______________________________________________              \n"
                             "        .'                                               `.            \n"
                             "     .'                                                   `.           \n"
-                            "    .'                                                       `.        \n"
-                           ,TERMINAL_TYPING_SPEED)
+                            "    .'                                                       `.        \n", TERMINAL_TYPING_SPEED)
 def you_died():
-#Change the font and text size
-##http://www.network-science.de/ascii/
-# Ascii character generator
+    #Change the font and text size
+    ##http://www.network-science.de/ascii/
+    # Ascii character generator
     terminal_typing_effect(
                         "__     ______  _    _ \n"
                         "\ \   / / __ \| |  | |\n"
                         " \ \_/ / |  | | |  | |\n"
                         "  \   /| |  | | |  | |\n"
                         "   | | | |__| | |__| |\n"
-                        "   |_|  \____/ \____/ \n"
-                        , TERMINAL_TYPING_SPEED)
+                        "   |_|  \____/ \____/ \n", TERMINAL_TYPING_SPEED)
     print()
     terminal_typing_effect(
                         "_____ _____ ______ _____   \n"
@@ -122,8 +116,7 @@ def you_died():
                         "| |  | || | | |__  | |  | |\n"
                         "| |  | || | |  __| | |  | |\n"
                         "| |__| || |_| |____| |__| |\n"
-                        "|_____/_____|______|_____/ \n"
-                        ,TERMINAL_TYPING_SPEED)
+                        "|_____/_____|______|_____/ \n", TERMINAL_TYPING_SPEED)
     from classes import exitMessage
     exitMessage()
 
@@ -142,11 +135,8 @@ def showGraves():
     print("     |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P| |R.I.P|     ")
     print("     |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____|     ")
 
-
-
-
 def printInventory():
-    print("You inventory:",inventory_array)
+    print("You inventory:", inventory_array)
     
 
 def clearTerminal():
@@ -163,8 +153,7 @@ def you_win():
                            "| | | |/ _ \| | | |  | | | | |  _ \ "
                            "| |_| | |_| | |_| |  | | | | | | | |"
                            " \__  |\___/|____/    \___/|_|_| |_|"
-                           "(____/                              "
-                           , TERMINAL_TYPING_SPEED)
+                           "(____/                              ", TERMINAL_TYPING_SPEED)
 
 def graveyard_entrance_gate():
     #https://ascii.co.uk/art/gates
@@ -194,14 +183,13 @@ def graveyard_entrance_gate():
                            "_________||_|_|_|_{| |}|||_|_||______________"
                            "                     |}|/"
                            "                     |}/"
-                           "                     |/"
-                           , TERMINAL_TYPING_SPEED)
+                           "                     |/", TERMINAL_TYPING_SPEED)
 
 
 def searchDiningRoom():
     terminal_typing_effect("You continue searching around the dining room\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("There is a set of drawers to your left, do you want to open them\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#1. Yes\n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Yes\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#2. No\n", TERMINAL_TYPING_SPEED)
     openRoomInDiningRoom = input("Open dining room drawers\n").lower()
 
@@ -212,11 +200,11 @@ def searchDiningRoom():
         chooseDrawerInput = input("Which drawer would you like to open?\n")
 
         if (chooseDrawerInput == '1'):
-            openDrawer1() #door is locked
+            openDrawer1()  #door is locked
         elif(chooseDrawerInput == '2'):
-            openDrawer2() #mob in room
+            openDrawer2()  #mob in room
         elif(chooseDrawerInput == '3'):
-            openDrawer3()#key in this room
+            openDrawer3()  #key in this room
         else:
             terminal_typing_effect("Choose a number\n", TERMINAL_TYPING_SPEED)
     elif(openRoomInDiningRoom == '2'):
@@ -251,13 +239,8 @@ def openDrawer3():
             #if statement to check if the player already has the key in inventory, incase they come back again
 
         elif(putKeyInInventory == '2'):
-            terminal_typing_effect("You have chosen to leave the key there\n",TERMINAL_TYPING_SPEED)
+            terminal_typing_effect("You have chosen to leave the key there\n", TERMINAL_TYPING_SPEED)
 
     terminal_typing_effect("You walk out of the dining room, and back into the hall\n", TERMINAL_TYPING_SPEED)
     from house import beginHousePath
     beginHousePath()
-
-
-
-
-

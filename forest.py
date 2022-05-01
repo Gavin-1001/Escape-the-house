@@ -1,12 +1,7 @@
 from classes import startFight
-import os
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inventory_array, printInventory
-    #clearTerminal
-
+#clearTerminal
 #from gameIntroLog import start_game_chose_path
-
-
-
 
 def beginForestPath():
     #clearTerminal()
@@ -30,7 +25,7 @@ def beginForestPath():
         forestPath2()
 
 
-def forestPath1(): #Use left and right
+def forestPath1():  #Use left and right
     terminal_typing_effect("DEAD END\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Ok, let's try the first path to find this stupid drone\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Oh damn it is stating to get dark, better hurry up!\n", TERMINAL_TYPING_SPEED)
@@ -47,7 +42,8 @@ def forestPath1(): #Use left and right
     if (forestInputTwo == '1'):
         forestPath2()
     elif (forestInputTwo == '2'):
-        from gameIntroLog import start_game_chose_path  # Don't know why but this works, but doesn't work globally, if this cannot be fixed put it down as a bug
+        # Don't know why but this works, but doesn't work globally, if this cannot be fixed put it down as a bug
+        from gameIntroLog import start_game_chose_path
         start_game_chose_path()
 
 
@@ -82,10 +78,7 @@ def forestPath2():
     from gameIntroLog import start_game_chose_path
     start_game_chose_path()
 
-
-
-
     # Maybe add pick up pieces of the drone, so it can be put back together at the end of the game
 
-    # Make a story to aquire the torch
+    # Make a story to acquire the torch
     # The torch/flashlight will just be listed as an option in if statement. Use a dict in the future

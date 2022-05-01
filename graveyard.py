@@ -8,10 +8,10 @@ def beginGraveyardPath():
     showGraves()
     terminal_typing_effect("It is really dark, would you like to use your flashlight?\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#1. Use flashlight\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#2. Don't use flashlight\n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. Don't use flashlight\n", TERMINAL_TYPING_SPEED)
 
-    #If the user has the flashlight in the inventory, then the user can equip the flash light, otherwise tell the user they do not have the flash light
-    #check the user has a flashlight if(inventory contains flash light -> then use
+    #If the user has the flashlight in the inventory, then the user can equip the flashlight, otherwise tell the user they do not have the flashlight
+    #check the user has a flashlight if(inventory contains flashlight -> then use
 
     useFlashlight = input("choose 1/2\n")
     if(useFlashlight == '1'):
@@ -27,7 +27,7 @@ def beginGraveyardPath():
     terminal_typing_effect('The drone had to of landed in here\n', TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You continue walking along the main road in the graveyard\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect('"This graveyard goes on for miles"\n', TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("As you get deeper into the graveyard you come to a crossroads in the graveyard\n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("As you get deeper into the graveyard you come to a crossroads in the graveyard\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You fiddle with the controller of the drone so you can hear where it is.\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("But you can hear it coming from the north east direction\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("But there are three paths in front of you\n", TERMINAL_TYPING_SPEED)
@@ -55,8 +55,7 @@ def graveyardPaths():
         graveyardInputPath = input("Choose from the paths above \n").lower()
         if graveyardInputPath.isnumeric():
             break
-        terminal_typing_effect("No aplha characters, Try again\n", TERMINAL_TYPING_SPEED)
-
+        terminal_typing_effect("No alpha characters, Try again\n", TERMINAL_TYPING_SPEED)
 
     if(graveyardInputPath == '1'):
         graveyardWestPath()
@@ -64,8 +63,6 @@ def graveyardPaths():
         graveyardNorthPath()
     elif(graveyardInputPath == '3'):
         graveyardEastPath()
-
-
 
 def graveyardWestPath():
     #mob path with dead end
@@ -120,14 +117,14 @@ def droneBattery():
     terminal_typing_effect(f"Battery charge {droneBattery}\n", TERMINAL_TYPING_SPEED)
 
     terminal_typing_effect("After listening for the drone, it seems to be coming from the east path\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("You carefully walk back to the main paths\n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("You carefully walk back to the main paths\n", TERMINAL_TYPING_SPEED)
     graveyardPaths()
     exit()
 
 def graveyardEastPath():
     terminal_typing_effect("This is the winning path", TERMINAL_TYPING_SPEED)
-    if(alreadyDownNorthPath == True):
-        terminal_typing_effect("This is true\n",TERMINAL_TYPING_SPEED)
+    if(alreadyDownNorthPath is True):
+        terminal_typing_effect("This is true\n", TERMINAL_TYPING_SPEED)
         terminal_typing_effect("Ok, the drone has to be down this path\n", TERMINAL_TYPING_SPEED)
     else:
         terminal_typing_effect("This is false\n", TERMINAL_TYPING_SPEED)

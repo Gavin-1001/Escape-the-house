@@ -25,7 +25,7 @@ class Player():
 
 
 player = Player(100, 10)
-mob= Player(20, 2)
+mob = Player(20, 2)
 #mobHouse = Player(40,5)
 
 

@@ -15,8 +15,6 @@ from colorama import Fore, Back, Style
 from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title
 
-
-
 global playerName
 startGame = input("Would you like to start the game Y/N\n")
 if (startGame == 'y' or startGame == 'Y'):
@@ -31,6 +29,3 @@ if (startGame == 'y' or startGame == 'Y'):
     game_intro_log()
 elif startGame == 'n' or startGame == 'N':
     terminal_typing_effect("Ok, maybe next time!\n", TERMINAL_TYPING_SPEED)
-
-
-
