@@ -1,6 +1,6 @@
 from classes import startFight
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, doorArt, doorOpen, house_staircase, \
-    inventory_array, printInventory
+    inventory_array, printInventory, searchDiningRoom
 
 
 def beginHousePath():
@@ -52,11 +52,8 @@ def house_path_1():
     elif(daggerInput == '2'):
         terminal_typing_effect("Ok, no dagger for you", TERMINAL_TYPING_SPEED)
 
-    terminal_typing_effect("There doesn't seem to be anything of interest in the dining room\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("You continue back into the main hall\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("You check another room, and encounter a mob\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("Do you want to fight the mob\n", TERMINAL_TYPING_SPEED)
-    startFight()
+    searchDiningRoom()
+
 
 
 def house_path_2():
@@ -87,11 +84,11 @@ def doorsUpstairs():
     exploreDoorInput = input("Choose door 1/2/3\n")
 
     if(exploreDoorInput == '1'):
-        openDoor1()
+        openDoor1() #this key doesn't fit the door
     elif(exploreDoorInput == '2'):
-        openDoor2()
+        openDoor2()#this room has a mob
     elif(exploreDoorInput == '3'):
-        openDoor3()
+        openDoor3() #this room has the map to the end
 
 
 def openDoor1():
@@ -101,14 +98,15 @@ def openDoor1():
 
 def openDoor2():
     terminal_typing_effect("You open the second door\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("The room has a large bed and a musty smell\n", TERMINAL_TYPING_SPEED)
-
 def openDoor3():
     if("key" in inventory_array):
-        print("You have the key")
+        terminal_typing_effect("You enter the room 3, and see a map in the room", TERMINAL_TYPING_SPEED)
+        #
     else:
         print("You do not have the key in the inventory")
         print("Inventory contains", inventory_array)
         print()
         from gameIntroLog import start_game_chose_path
         start_game_chose_path()
+
+#create function that brings user to three doors downstairs

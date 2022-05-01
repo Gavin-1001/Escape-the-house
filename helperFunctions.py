@@ -198,6 +198,61 @@ def graveyard_entrance_gate():
                            , TERMINAL_TYPING_SPEED)
 
 
+def searchDiningRoom():
+    terminal_typing_effect("You continue searching around the dining room\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("There is a set of drawers to your left, do you want to open them\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Yes\n",TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. No\n", TERMINAL_TYPING_SPEED)
+    openRoomInDiningRoom = input("Open dining room drawers\n").lower()
+
+    if(openRoomInDiningRoom == '1'):
+        terminal_typing_effect("#1.Top drawer\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("#2.Middle drawer\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("#3.Bottom drawer\n", TERMINAL_TYPING_SPEED)
+        chooseDrawerInput = input("Which drawer would you like to open?\n")
+
+        if (chooseDrawerInput == '1'):
+            openDrawer1() #door is locked
+        elif(chooseDrawerInput == '2'):
+            openDrawer2() #mob in room
+        elif(chooseDrawerInput == '3'):
+            openDrawer3()#key in this room
+        else:
+            terminal_typing_effect("Choose a number\n", TERMINAL_TYPING_SPEED)
+    elif(openRoomInDiningRoom == '2'):
+        terminal_typing_effect("You exit the dining room, back into the main hall\n", TERMINAL_TYPING_SPEED)
+        from house import beginHousePath
+        #maybe add an option to allow the user to exit the house and check the graveyard path
+        beginHousePath()
+
+def openDrawer1():
+    terminal_typing_effect("You go to open the 1st drawer\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("The drawer does not open\n", TERMINAL_TYPING_SPEED)
+
+
+def openDrawer2():
+    terminal_typing_effect("You open the second drawer to find some candles\n", TERMINAL_TYPING_SPEED)
+
+def openDrawer3():
+    terminal_typing_effect("In this drawer you find a key\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Do you want to put the key in your inventory\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Put key in inventory\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. Leave the key\n", TERMINAL_TYPING_SPEED)
+    putKeyInInventory = input("Choose 1/2 from above\n")
+
+    if(putKeyInInventory == '1'):
+        inventory_array.append("key")
+        terminal_typing_effect("The key is in your inventory\n", TERMINAL_TYPING_SPEED)
+        printInventory()
+        #if statement to check if the player already has the key in inventory, incase they come back again
+
+    elif(putKeyInInventory == '2'):
+        terminal_typing_effect("You have chosen to leave the key there\n",TERMINAL_TYPING_SPEED)
+
+    terminal_typing_effect("You walk out of the dining room, and back into the hall\n", TERMINAL_TYPING_SPEED)
+    from house import beginHousePath
+    beginHousePath()
+
 
 
 
