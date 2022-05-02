@@ -17,7 +17,6 @@ class mob():
         #This works just testing 
 """
 
-
 class Player():
     def __init__(self, health, attack):
         self.health = health
@@ -27,8 +26,6 @@ class Player():
 player = Player(100, 10)
 mob = Player(20, 2)
 #mobHouse = Player(40,5)
-
-
 
 def start_fight():
     print("The mobs health is ", mob.health, "with an attack of ", mob.attack, '\n')

@@ -26,7 +26,7 @@ def start_game():
                 break
             terminal_typing_effect("Please only enter characters a-z \n", TERMINAL_TYPING_SPEED)
 
-        terminal_typing_effect(f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect(Fore.LIGHTBLUE_EX + f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
         beginning_title()
         game_intro_log()
     elif (startGame == 'n'):
