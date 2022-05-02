@@ -1,10 +1,7 @@
-from classes import startFight
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inventory_array, printInventory
-#clearTerminal
-#from gameIntroLog import start_game_chose_path
+from classes import start_fight
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, inventory_array, print_inventory
 
-def beginForestPath():
-    #clearTerminal()
+def begin_forest_path():
     terminal_typing_effect("Entering the forest, gotta be careful for wild animals as it gets dark\n",
                            TERMINAL_TYPING_SPEED)
     terminal_typing_effect("I don't think the drone ended up this far, but maybe it did\n", TERMINAL_TYPING_SPEED)
@@ -20,15 +17,14 @@ def beginForestPath():
 
     forestInputOne = input("Choose from one of the above 1/2\n")
     if (forestInputOne == '1'):
-        forestPath1()
+        forest_path_1()
     elif (forestInputOne == '2'):
-        forestPath2()
+        forest_path_2()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
-        beginForestPath()
+        begin_forest_path()
 
-
-def forestPath1():  #Use left and right
+def forest_path_1():  # Use left and right
     terminal_typing_effect("DEAD END\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Ok, let's try the first path to find this stupid drone\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Oh damn it is stating to get dark, better hurry up!\n", TERMINAL_TYPING_SPEED)
@@ -43,17 +39,17 @@ def forestPath1():  #Use left and right
     forestInputTwo = input("Choose 1/2\n")
 
     if (forestInputTwo == '1'):
-        forestPath2()
+        forest_path_2()
     elif (forestInputTwo == '2'):
         # Don't know why but this works, but doesn't work globally, if this cannot be fixed put it down as a bug
         from gameIntroLog import start_game_chose_path
         start_game_chose_path()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
-        forestPath1()
+        forest_path_1()
 
 
-def forestPath2():
+def forest_path_2():
     terminal_typing_effect("PATH WITH FLASHLIGHT\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("YOU FOUND A FLASH LIGHT\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("FLASH LIGHT STORED IN INVENTORY\n", TERMINAL_TYPING_SPEED)
@@ -66,22 +62,22 @@ def forestPath2():
     print()
 
     forestInputThree = input("Choose 1/2\n")
-    if('torch' in inventory_array):
+    if ('torch' in inventory_array):
         terminal_typing_effect("You already have the torch in your inventory!", TERMINAL_TYPING_SPEED)
 
     else:
         if (forestInputThree == '1'):
             terminal_typing_effect("You have put the torch in your pocket\n", TERMINAL_TYPING_SPEED)
             inventory_array.append("torch")
-            printInventory()
+            print_inventory()
         elif (forestInputThree == '2'):
             terminal_typing_effect("You left the torch\n", TERMINAL_TYPING_SPEED)
         else:
             terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
-            forestPath2()
+            forest_path_2()
 
     terminal_typing_effect("The end of the path nears, you see a mob in the distance\n", TERMINAL_TYPING_SPEED)
-    startFight()
+    start_fight()
 
     terminal_typing_effect("Do you want to go back to the start?", TERMINAL_TYPING_SPEED)
     from gameIntroLog import start_game_chose_path

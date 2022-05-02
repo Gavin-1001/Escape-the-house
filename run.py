@@ -16,7 +16,7 @@ from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title
 
 global playerName
-def startGame():
+def start_game():
     startGame = input("Would you like to start the game Y/N\n").lower()
 
     if (startGame == 'y'):
@@ -36,4 +36,5 @@ def startGame():
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
         startGame()
 
-startGame()
+
+start_game()

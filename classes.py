@@ -30,7 +30,7 @@ mob = Player(20, 2)
 
 
 
-def startFight():
+def start_fight():
     print("The mobs health is ", mob.health, "with an attack of ", mob.attack, '\n')
     print("Your current health is ", player.health, "with an attack of", player.attack, '\n')
 
@@ -60,7 +60,7 @@ def attack():
         elif (player.health <= 0):
             you_died()
 
-def exitMessage():
+def exit_message():
     terminal_typing_effect("Thanks for playing!!\n", TERMINAL_TYPING_SPEED)
 
     playAgain = input("Do you want to play again? Yes/No\n").lower()

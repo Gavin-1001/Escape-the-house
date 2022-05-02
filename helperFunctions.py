@@ -31,7 +31,7 @@ def beginning_title():
     print()
 
 
-def doorArt():
+def door_art():
     # https://ascii.co.uk/art/doors
     terminal_typing_effect("            __________ \n"
                            "           |  __  __  |\n"
@@ -48,7 +48,7 @@ def doorArt():
     print()
 
 
-def doorOpen():
+def door_open():
     # https://ascii.co.uk/art/doors
     terminal_typing_effect(" ______________   \n"
                            "|\ ___________ /| \n"
@@ -121,11 +121,11 @@ def you_died():
         "| |  | || | |  __| | |  | |\n"
         "| |__| || |_| |____| |__| |\n"
         "|_____/_____|______|_____/ \n", TERMINAL_TYPING_SPEED)
-    from classes import exitMessage
-    exitMessage()
+    from classes import exit_message
+    exit_message()
 
 
-def showGraves():
+def show_graves():
     print("      ,-=-.   ,-=-.   ,-=-.   ,-=-.   ,-=-.     _     ,-=-.   ,-=-.      ")
     print("     /  +  \ /  +  \ /  +  \ /  +  \ /  +  \  _|1|_  /  +  \ /  +  \     ")
     print("     | ~~~ | | ~~~ | | ~~~ | | ~~~ | | ~~~ | |_ H _| | ~~~ | | ~~~ |     ")
@@ -139,11 +139,11 @@ def showGraves():
     print("     |_____| |_____| |_____| |_____| |_____| |_____| |_____| |_____|     ")
 
 
-def printInventory():
+def print_inventory():
     print("You inventory:", inventory_array)
 
 
-def clearTerminal():
+def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -191,7 +191,7 @@ def graveyard_entrance_gate():
                            "                     |/", TERMINAL_TYPING_SPEED)
 
 
-def searchDiningRoom():
+def search_dining_room():
     terminal_typing_effect("#1. Yes\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#2. No\n", TERMINAL_TYPING_SPEED)
     openRoomInDiningRoom = input("Chose 1/2\n")
@@ -204,38 +204,37 @@ def searchDiningRoom():
         chooseDrawerInput = input("Chose one from above\n")
 
         if (chooseDrawerInput == '1'):
-            openDrawer1()  # drawer is locked
+            open_drawer_1()  # drawer is locked
         elif (chooseDrawerInput == '2'):
-            openDrawer2()  # mob in room
+            ope_drawer_2()  # mob in room
         elif (chooseDrawerInput == '3'):
-            openDrawer3()  # key in this room
+            open_drawer_3()  # key in this room
         else:
             terminal_typing_effect("Choose a number\n", TERMINAL_TYPING_SPEED)
     elif (openRoomInDiningRoom == '2'):
         terminal_typing_effect("You exit the dining room, back into the main hall\n", TERMINAL_TYPING_SPEED)
         # maybe add an option to allow the user to exit the house and check the graveyard path
-        from house import houseEntranceOptions
-        houseEntranceOptions()
+        from house import house_entrance_options
+        house_entrance_options()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
-        searchDiningRoom()
+        search_dining_room()
 
 
-
-def openDrawer1():
+def open_drawer_1():
     terminal_typing_effect("You go to open the 1st drawer\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("The drawer does not open\n", TERMINAL_TYPING_SPEED)
-    searchDiningRoom()
+    search_dining_room()
 
 
-def openDrawer2():
+def ope_drawer_2():
     terminal_typing_effect("You open the second drawer to find some candles\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("let's check the next drawer\n", TERMINAL_TYPING_SPEED)
     print()
-    searchDiningRoom()
+    search_dining_room()
 
 
-def openDrawer3():
+def open_drawer_3():
     terminal_typing_effect("In this drawer you find a key\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Do you want to put the key in your inventory\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#1. Put key in inventory\n", TERMINAL_TYPING_SPEED)
@@ -249,17 +248,21 @@ def openDrawer3():
         if (putKeyInInventory == '1'):
             inventory_array.append("key")
             terminal_typing_effect("The key is in your inventory\n", TERMINAL_TYPING_SPEED)
-            printInventory()
+            print_inventory()
             # if statement to check if the player already has the key in inventory, incase they come back again
 
         elif (putKeyInInventory == '2'):
             terminal_typing_effect("You have chosen to leave the key there\n", TERMINAL_TYPING_SPEED)
         else:
             terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
-            openDrawer3()
+            open_drawer_3()
 
     terminal_typing_effect("You walk out of the dining room, and back into the hall\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Do you want to go back into the dining room again? Or continue upstairs?\n",
                            TERMINAL_TYPING_SPEED)
-    from house import houseEntranceOptions
-    houseEntranceOptions()
+    from house import house_entrance_options
+    house_entrance_options()
+
+
+def draw_map():
+    print("Map")

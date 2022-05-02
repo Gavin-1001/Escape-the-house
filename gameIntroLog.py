@@ -1,7 +1,7 @@
-from forest import beginForestPath
-from graveyard import beginGraveyardPath
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, clearTerminal
-from house import beginHousePath
+from forest import begin_forest_path
+from graveyard import begin_graveyard_path
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, clear_terminal
+from house import begin_house_path
 
 
 def game_intro_log():
@@ -27,13 +27,13 @@ def start_game_chose_path():
     firstUserInput = input("Choose a path\n")
 
     if (firstUserInput == '1'):
-        beginForestPath()
+        begin_forest_path()
     elif (firstUserInput == '2'):
-        beginHousePath()
+        begin_house_path()
     elif (firstUserInput == '3'):
-        beginGraveyardPath()
+        begin_graveyard_path()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
         start_game_chose_path()
-    clearTerminal()
+    clear_terminal()
     print()
