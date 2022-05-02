@@ -1,6 +1,38 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+## Table of Contents
+
+* [General Introduction](#general-introduction)
+
+
+## General Introduction
+A text based
+
+
+
+## Design
+
+### Goals
+
+### Audience
+
+
+## Technologies
+
+Python
+
+### Other libraries use
+* Colorama
+* Github
+
+## Bugs
+* Currently, t
+
+![Screenshot 2020-02-09 at 5 08 54 PM]()
+
+
+
+
 
 This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
