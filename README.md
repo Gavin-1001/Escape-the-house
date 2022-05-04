@@ -1,16 +1,20 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 ## Table of Contents
 
 * [General Introduction](#general-introduction)
+* [Technologies](#technologies)
+* [Bugs](#bugs)
+* [Testing](#testing)
+* [Deployment](#deployment)
 
 
 ## General Introduction
-A text based
+A text based terminal game where the user can play the game from the command line. The aim of the game is to find the drone and escape the 
 
 
 
 ## Design
+
 
 ### Goals
 
@@ -32,8 +36,10 @@ Python
 
 
 
+## Testing
 
 
+## Deployment
 This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
 ## Reminders
