@@ -1,22 +1,6 @@
 from helperFunctions import you_died, terminal_typing_effect, TERMINAL_TYPING_SPEED
 
 
-"""
-class player:
-    health = 100
-    attack = 10
-
-
-class mob():
-    health = 20
-    attack = 2
-
-    def show(self):
-        print(self.health)
-        print(self.attack)
-        #This works just testing 
-"""
-
 class Player():
     def __init__(self, health, attack):
         self.health = health
@@ -60,8 +44,8 @@ def attack():
 def exit_message():
     terminal_typing_effect("Thanks for playing!!\n", TERMINAL_TYPING_SPEED)
 
-    playAgain = input("Do you want to play again? Yes/No\n").lower()
-    if(playAgain == 'yes'):
+    playAgain = input("Do you want to play again? Y/N\n").lower()
+    if(playAgain == 'Y'):
         print()
-    elif(playAgain == 'no'):
+    elif(playAgain == 'N'):
         terminal_typing_effect("Thanks for playing!\n", TERMINAL_TYPING_SPEED)

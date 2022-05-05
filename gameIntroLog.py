@@ -24,7 +24,7 @@ def start_game_chose_path():
     terminal_typing_effect("1. The Forest\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("2. The House\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("3. The Graveyard\n", TERMINAL_TYPING_SPEED)
-    firstUserInput = input("Choose a path\n")
+    firstUserInput = input("Choose a path 1/2/3\n")
 
     if (firstUserInput == '1'):
         begin_forest_path()

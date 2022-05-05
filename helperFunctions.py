@@ -264,5 +264,10 @@ def open_drawer_3():
     house_entrance_options()
 
 
-def draw_map():
-    print("Map")
+def read_the_rules():
+    terminal_typing_effect("RULES:\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("1. All user inputs are numerical or Y/N\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("2. All Y/N answers are NOT case sensitive, the user can use y/n or Y/N\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("3. Have fun!\n", TERMINAL_TYPING_SPEED)
+    print()
+

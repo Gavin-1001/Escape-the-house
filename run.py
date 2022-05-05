@@ -13,20 +13,29 @@
 from colorama import Fore, Back, Style
 
 from gameIntroLog import game_intro_log
-from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title
+from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title, read_the_rules
+
+print(Back.CYAN)
+print(Fore.BLACK)
 
 global playerName
 def start_game():
     startGame = input("Would you like to start the game Y/N\n").lower()
 
     if (startGame == 'y'):
+        terminal_typing_effect("Would you like to read the rules?\n", TERMINAL_TYPING_SPEED)
+        readRules = input("READ RULES\n").lower()
+        if(readRules == 'y'):
+            read_the_rules()
+        elif(readRules == 'n'):
+            terminal_typing_effect("Ok, no rules for you!\n", TERMINAL_TYPING_SPEED)
         while True:
             playerName = input("Please enter your name\n").lower()
             if playerName.isalpha():
                 break
             terminal_typing_effect("Please only enter characters a-z \n", TERMINAL_TYPING_SPEED)
 
-        terminal_typing_effect(Fore.LIGHTBLUE_EX + f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect(f"Welcome {playerName}, good luck!\n", TERMINAL_TYPING_SPEED)
         beginning_title()
         game_intro_log()
     elif (startGame == 'n'):

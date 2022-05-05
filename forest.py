@@ -63,7 +63,7 @@ def forest_path_2():
 
     forestInputThree = input("Choose 1/2\n")
     if ('torch' in inventory_array):
-        terminal_typing_effect("You already have the torch in your inventory!", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("You already have the torch in your inventory!\n", TERMINAL_TYPING_SPEED)
 
     else:
         if (forestInputThree == '1'):
@@ -79,11 +79,6 @@ def forest_path_2():
     terminal_typing_effect("The end of the path nears, you see a mob in the distance\n", TERMINAL_TYPING_SPEED)
     start_fight()
 
-    terminal_typing_effect("Do you want to go back to the start?", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Do you want to go back to the start?\n", TERMINAL_TYPING_SPEED)
     from gameIntroLog import start_game_chose_path
     start_game_chose_path()
-
-    # Maybe add pick up pieces of the drone, so it can be put back together at the end of the game
-
-    # Make a story to acquire the torch
-    # The torch/flashlight will just be listed as an option in if statement. Use a dict in the future
