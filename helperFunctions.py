@@ -21,7 +21,7 @@ def beginning_title():
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("#           ESCAPE THE ATTIC          #\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#           ESCAPE THE HOUSE          #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#            Gavin Shelley            #\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#                                     #\n", TERMINAL_TYPING_SPEED)
