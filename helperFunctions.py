@@ -7,6 +7,7 @@ inventory_array = []
 TERMINAL_TYPING_SPEED = 0.05
 
 
+
 def terminal_typing_effect(text, speed):
     # https://stackoverflow.com/questions/20302331/typing-effect-in-python
     for char in text:

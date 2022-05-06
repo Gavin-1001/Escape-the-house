@@ -37,10 +37,10 @@ def begin_graveyard_path():
     terminal_typing_effect("Do you want to listen out for the drone? Y/N\n", TERMINAL_TYPING_SPEED)
 
     graveyardMainListenForDrone = input("Listen for drone Y/N\n").lower()
-    if (graveyardMainListenForDrone == 'Y'):
+    if (graveyardMainListenForDrone == 'y'):
         droneBattery()
         terminal_typing_effect("The drone sounds like it is coming from the north east\n", TERMINAL_TYPING_SPEED)
-    elif (graveyardMainListenForDrone == 'N'):
+    elif (graveyardMainListenForDrone == 'n'):
         terminal_typing_effect("Sure, best to save the battery until you get closer\n", TERMINAL_TYPING_SPEED)
         graveyard_paths()
     else:
@@ -88,11 +88,11 @@ def graveyard_west_path_1():
 
     continueWalking = input("Choose Y/N\n").lower()
 
-    if (continueWalking == 'Y'):
+    if (continueWalking == 'y'):
         terminal_typing_effect("You continue walking in the dark\n", TERMINAL_TYPING_SPEED)
         terminal_typing_effect("You fall in a hole in the ground and die\n", TERMINAL_TYPING_SPEED)
         you_died()
-    elif (continueWalking == 'N'):
+    elif (continueWalking == 'n'):
         terminal_typing_effect("You turn around and proceed to walk back to where the paths fork\n",
                                TERMINAL_TYPING_SPEED)
         terminal_typing_effect(
@@ -113,9 +113,9 @@ def graveyard_north_path():
     terminal_typing_effect("Do you want to listen out for the drone?\n", TERMINAL_TYPING_SPEED)
     listenForDrone = input("Y/N\n").lower()
     # put a check on this if/elif block to check alpha character only
-    if (listenForDrone == 'Y'):
+    if (listenForDrone == 'y'):
         droneBattery()
-    elif (listenForDrone == 'N'):
+    elif (listenForDrone == 'n'):
         terminal_typing_effect("Ok\n", TERMINAL_TYPING_SPEED)
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
@@ -143,12 +143,13 @@ def graveyard_east_path():
 
     eastPathListenForDrone = input("Do you want to listen for the drone again Y/N\n").lower()
 
-    if (eastPathListenForDrone == 'Y'):
+    if (eastPathListenForDrone == 'y'):
         droneBattery()
         terminal_typing_effect("You hear the drone much clearer now \n", TERMINAL_TYPING_SPEED)
         found_drone()
-    elif (eastPathListenForDrone == 'N'):
+    elif (eastPathListenForDrone == 'n'):
         terminal_typing_effect("ok, it may be a little harder to find the drone\n", TERMINAL_TYPING_SPEED)
+
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
         graveyard_east_path()
