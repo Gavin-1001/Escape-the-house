@@ -9,8 +9,6 @@
 # BLUE text =
 # Add a would you like to play
 
-
-
 from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title, read_the_rules
 
