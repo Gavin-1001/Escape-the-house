@@ -40,12 +40,9 @@ Python modules(sys, time, os)
 
 
 ## Testing
-### Pep8
+### Pep8 validation
 * My chosen IDE for this project was PyCharm, which has a built in PEP 8 validator, the only PEP8 errors I encountered were W605 escape sequences which were associated with the acsii art in helperFunctions.py, and to remove redundant parentheses. I have kept the brackets in place as I have come from 5 years of Java and my brain is hardwired to brackets around flow control structures. 
-
-[Screenshot](https://github.com/Gavin-1001/Escape-the-attic/blob/main/assets/images/image_1.png)
-* For the testing portion of the application, I manually tested the application by navigating the paths to see if the test results matched the expected results. For the testing I created a testing sheet, the sheet is here.
-
+* Screenshots can be found [here](https://github.com/Gavin-1001/Escape-the-attic/tree/main/assets/images)
 
 ## Deployment
 As part of the project, this application had to be deployed on Heroku. Below are the steps to successfully deploy this application to Heroku. 
