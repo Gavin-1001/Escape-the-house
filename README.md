@@ -6,6 +6,7 @@
 * [Bugs](#bugs)
 * [Testing](#testing)
 * [Deployment](#deployment)
+* [Credits](#credits)
 
 
 ## General Introduction
@@ -17,6 +18,7 @@ A text based terminal game where the user can play the game from the command lin
 
 
 ### Goals
+The goal of this application was to create an adventure text-based game using the command line. The goal is to create an applciation that would play similar to the iconic text-based game, Zork.
 
 ### Audience
 
@@ -30,19 +32,20 @@ Python
 * Github
 
 ## Bugs
-* Currently, t
+* The only issue in the project is that there is a import statement that has been imported locally in 
 
 ![Screenshot 2020-02-09 at 5 08 54 PM]()
 
 
 
 ## Testing
+For the testing portion of the application, I manually tested the application by navigating the paths to see if I got the expected results. For the testing I created a testing sheet, the sheet is here.
 
 
 ## Deployment
 This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
+## Credits
 
 * Your code must be placed in the `run.py` file
 * Your dependencies must be placed in the `requirements.txt` file
