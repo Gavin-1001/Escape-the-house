@@ -20,7 +20,7 @@ def start_game():
 
     if (startGame == 'y'):
         terminal_typing_effect("Would you like to read the rules?\n", TERMINAL_TYPING_SPEED)
-        readRules = input("READ RULES\n").lower()
+        readRules = input("READ RULES Y/N\n").lower()
         if(readRules == 'y'):
             read_the_rules()
         elif(readRules == 'n'):

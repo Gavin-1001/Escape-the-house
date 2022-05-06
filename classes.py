@@ -9,7 +9,7 @@ class Player():
 
 player = Player(100, 10)
 mob = Player(20, 2)
-#mobHouse = Player(40,5)
+
 
 def start_fight():
     print("The mobs health is ", mob.health, "with an attack of ", mob.attack, '\n')
