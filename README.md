@@ -32,30 +32,25 @@ Python modules(sys, time, os)
 * Github
 
 ## Bugs
-* The only issue in the project is that there is a import statement that has been imported locally in 
-
-[Screenshot 2020-02-09 at 5 08 54 PM](https://github.com/Gavin-1001/Escape-the-attic/blob/main/assets/images/image_1.png)
-
+* The only issue in the project is that there is a import statement that has been imported locally, although it is not best practice, I removed the import and placed it at the top along with the other imports and I got a circular import error, I removed all imports and reimported everything again and still got the same error . The local import statements are listed below:
+1. forest.py line 45
+2. forest.py line 83
+3. house.py line 37
+4. helperFunction.py line 217
 
 
 ## Testing
-For the testing portion of the application, I manually tested the application by navigating the paths to see if I got the expected results. For the testing I created a testing sheet, the sheet is here.
+### Pep8
+* My chosen IDE for this project was PyCharm, which has a built in PEP 8 validator, the only PEP8 errors I encountered were W605 escape sequences which were associated with the acsii art in helperFunctions.py, and to remove redundant parentheses. I have kept the brackets in place as I have come from 5 years of Java and my brain is hardwired to brackets around flow control structures. 
+
+[Screenshot](https://github.com/Gavin-1001/Escape-the-attic/blob/main/assets/images/image_1.png)
+* For the testing portion of the application, I manually tested the application by navigating the paths to see if the test results matched the expected results. For the testing I created a testing sheet, the sheet is here.
 
 
 ## Deployment
-As part of the project, this application had to be deployed on Heroku. 
+As part of the project, this application had to be deployed on Heroku. Below are the steps to successfully deploy this application to Heroku. 
 
-## Credits
-#### 1. [Ascii Art](https://ascii.co.uk/art/) 
-To add some graphic to the application, I decided to use ascii art to give some effect to the user experience. 
-
-#### 2. [Stack Overflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
-During the initial design phase of the project, I wanted to make the application as nostalgic as possible. I wanted to give the impression that the text begin displayed was a narriator talking to the user. To do this I created a typing effect function called terminal_typing_effect which took text and the speed of the output text as parameters. This would take each char and sleep it for 0.05 seconds and then display it, giving the narriator effect.
-
-#### 3. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
-As this project is being hosted on Heroku, the boilerplate code is provided by Code Institute in order to be compatiable with Heroku, and display a terminal on screen for the user to access the application
-
-## Creating the Heroku app
+### Creating the Heroku app
 
 * Before you begin deploying to Heroku, please check that your code in error free before continuing. 
 * In the terminal you need to enter the command below, as Heroku will use the .txt file to import the required dependencies. 
@@ -67,7 +62,7 @@ As this project is being hosted on Heroku, the boilerplate code is provided by C
 * Choose a unique name for your app, and choose your region. 
 * Once that is done, click "Create app"
 
-## Configuring Heroku App
+### Configuring Heroku App
 * Once you have created the app in the section above, you now have to configure the app.
 * To begin, navigate to the settings tab in the ribbon of the dashboard, scroll down to "Buildpacks" 
 * For this application you will need to add two buildpacks, Python and Node.js. It is very important that Python is the first buildpack that you select, and then Node.js, as this will cause issues when you go to deploy the app, see below for a visual description of the buildpack structure.  
@@ -76,7 +71,7 @@ As this project is being hosted on Heroku, the boilerplate code is provided by C
 * Next, if you have any files with sensitive information such as API keys or credentials they should be stored in the Config Vars section. 
 * You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-## Deploy Heroku App
+### Deploy Heroku App
 * To deploy the application to Heroku, navigate to the deploy tab on the ribbon.
 * In the "Deployment method" section select GitHub, after a few seconds click on the "Conntect to Github" button. This will take you to Github login, enter your email and password as usual and continue. 
 * Enter your repository name in Github that you want to deploy on Heroku. 
@@ -86,7 +81,7 @@ As this project is being hosted on Heroku, the boilerplate code is provided by C
 * Once the application has build successfully you will have the opportunity to visit your newly deployed application live site.
 * To view the application live, navigate to the application dashboard, from there click "Open app" on the right hand side of the screen.
 
-##Deploy Heroku App via CLI
+### Deploy Heroku App via CLI
 As of 20/04/2022 Github has been hacked and OAuth tokens have been stolen, to stop further attacks Heroku has disabled users from deploying from Github and has asked users to deploy applications from the Heroku CLI. Until further notice, the section above "Deploy Heroku App" will not be accepted when trying to deploy.  
 
 *  As the Heroku CLI has pre-requisites, I have left a link to the [install](https://devcenter.heroku.com/articles/heroku-cli) guide for the CLI, and pre-requisites
@@ -104,6 +99,18 @@ As of 20/04/2022 Github has been hacked and OAuth tokens have been stolen, to st
 * If you run into errors open the logs to check the issue. 
 * To access the logs, navigate to the application dahsboard and click "More" located beside the "Open app" on the right hand side of the screen.
 * Here the logs will display any issues that have prevented deployment. 
-* One of the most common issue is that, when configuring the Buildpacks, some users put Node.js before Python, as mentioned in that section, this is one of the "issues". 
+* One of the most common issue is that, when configuring the Buildpacks, some users put Node.js before Python, as mentioned in that section, this is one of the "issues".  
+
+## Credits
+#### 1. [Ascii Art](https://ascii.co.uk/art/) 
+To add some graphic to the application, I decided to use ascii art to give some effect to the user experience. 
+
+#### 2. [Stack Overflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
+During the initial design phase of the project, I wanted to make the application as nostalgic as possible. I wanted to give the impression that the text begin displayed was a narriator talking to the user. To do this I created a typing effect function called terminal_typing_effect which took text and the speed of the output text as parameters. This would take each char and sleep it for 0.05 seconds and then display it, giving the narriator effect.
+
+#### 3. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
+As this project is being hosted on Heroku, the boilerplate code is provided by Code Institute in order to be compatiable with Heroku, and display a terminal on screen for the user to access the application
+
+
 
 
