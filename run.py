@@ -10,13 +10,9 @@
 # Add a would you like to play
 
 
-from colorama import Fore, Back, Style
 
 from gameIntroLog import game_intro_log
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, beginning_title, read_the_rules
-
-print(Back.CYAN)
-print(Fore.BLACK)
 
 global playerName
 def start_game():
