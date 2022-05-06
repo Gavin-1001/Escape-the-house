@@ -4,7 +4,7 @@ import time
 
 inventory_array = []
 
-TERMINAL_TYPING_SPEED = 0.0025
+TERMINAL_TYPING_SPEED = 0.05
 
 
 def terminal_typing_effect(text, speed):
