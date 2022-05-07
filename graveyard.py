@@ -1,8 +1,6 @@
 from helperFunctions import terminal_typing_effect, TERMINAL_TYPING_SPEED, show_graves, inventory_array, you_died, \
     you_win, graveyard_entrance_gate
 
-alreadyDownNorthPath = False
-
 
 def begin_graveyard_path():
     terminal_typing_effect("You approach the entrance of the graveyard\n", TERMINAL_TYPING_SPEED)
@@ -136,8 +134,6 @@ def droneBattery():
     terminal_typing_effect("You carefully walk back to the main paths\n", TERMINAL_TYPING_SPEED)
     graveyard_paths()
     exit()
-
-
 
 def graveyard_east_path():
 
