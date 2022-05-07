@@ -13,8 +13,10 @@
 A text based terminal game where the user can play the game from the command line. The aim of the game is to find the drone and find a way out. Find items to use to defend against mobs and unlock doors to explore. 
 
 ## Design
-!!Talk about modularizing of code!!
-Flow Chart here
+#### Modular Code
+* Because of the scale of this project, modularised code is essential as it allows for code reuseability.
+
+* The project [Flow chart](https://github.com/Gavin-1001/Escape-the-attic/blob/main/assets/flowchart/Flowchart.pdf)
 
 
 ### Goals
@@ -33,10 +35,12 @@ Python modules(sys, time, os)
 
 ## Bugs
 * The only issue in the project is that there is a import statement that has been imported locally, although it is not best practice, I removed the import and placed it at the top along with the other imports and I got a circular import error, I removed all imports and reimported everything again and still got the same error . The local import statements are listed below:
-1. forest.py line 45
-2. forest.py line 83
-3. house.py line 37
-4. helperFunction.py line 217
+  1. forest.py line 45
+  2. forest.py line 83
+  3. house.py line 37
+  4. helperFunction.py line 217
+
+* Another bug I have encountered is clearing the terminal between sessions. I have the function calls, but it is not executing when ran.
 
 
 ## Testing
