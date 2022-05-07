@@ -35,6 +35,7 @@ There is no specific target audience for this project. But I do believe that it 
 * [Git](https://git-scm.com/)
 * [Heroku](https://www.heroku.com/)
 
+
 ## Bugs
 * The only issue in the project is that there is a import statement that has been imported locally, although it is not best practice, I removed the import and placed it at the top along with the other imports and I got a circular import error, I removed all imports and reimported everything again and still got the same error . The local import statements are listed below:
   1. forest.py line 45
@@ -50,8 +51,10 @@ There is no specific target audience for this project. But I do believe that it 
 * My chosen IDE for this project was PyCharm, which has a built in PEP 8 validator, the only PEP8 errors I encountered were W605 escape sequences which were associated with the acsii art in helperFunctions.py, and to remove redundant parentheses. I have kept the brackets in place as I have come from 5 years of Java and my brain is hardwired to brackets around flow control structures. 
 * Screenshots can be found [here](https://github.com/Gavin-1001/Escape-the-attic/tree/main/assets/images)
 
+
 ## Deployment
 As part of the project, this application had to be deployed on Heroku. Below are the steps to successfully deploy this application to Heroku. 
+
 
 ### Creating the Heroku app
 
