@@ -57,7 +57,7 @@ As part of the project, this application had to be deployed on Heroku. Below are
 
 * Before you begin deploying to Heroku, please check that your code in error free before continuing. 
 * In the terminal you need to enter the command below, as Heroku will use the .txt file to import the required dependencies. 
- `pip3 freeze > requirements.txt`
+* `pip3 freeze > requirements.txt`
 * If you do not have a Heroku account create one [here](https://signup.heroku.com/). Or alternatively you can login to your Heroku account. 
 * Once you have created your account or signed in. Navigate to the Heroku dashboard. 
 * From the dashboard select the "New" button in the top right hand side of the screen. 
