@@ -121,6 +121,11 @@ def graveyard_north_path():
 
 
 def droneBattery():
+    """
+        -initial drone battery is 100%. Each time the function is called,
+        the drone battery is set to the current battery - 20. Then displays the battery level.
+        -If battery is 0. Battery cannot be used
+    """
     droneBattery = 100
     batteryDepleted = 20
     droneBattery = droneBattery - batteryDepleted
