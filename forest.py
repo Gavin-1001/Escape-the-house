@@ -25,7 +25,7 @@ def begin_forest_path():
         begin_forest_path()
 
 def forest_path_1():  # Use left and right
-    terminal_typing_effect("DEAD END\n", TERMINAL_TYPING_SPEED)
+    print()
     terminal_typing_effect("Ok, let's try the first path to find this stupid drone\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Oh damn it is stating to get dark, better hurry up!\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You reach the end of the path, it's a dead end, you need to turn back\n",
@@ -50,7 +50,7 @@ def forest_path_1():  # Use left and right
 
 
 def forest_path_2():
-    terminal_typing_effect("PATH WITH FLASHLIGHT\n", TERMINAL_TYPING_SPEED)
+    print()
     terminal_typing_effect("YOU FOUND A FLASH LIGHT\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("FLASH LIGHT STORED IN INVENTORY\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("Maybe this path will be the one\n", TERMINAL_TYPING_SPEED)

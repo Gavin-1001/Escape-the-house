@@ -20,7 +20,9 @@ def begin_house_path():
     terminal_typing_effect('"Damn, all the doors are locked, let me try this last one"\n', TERMINAL_TYPING_SPEED)
     terminal_typing_effect('"A ha" you shout\n', TERMINAL_TYPING_SPEED)
     terminal_typing_effect("It looks like you opened the dining room door\n", TERMINAL_TYPING_SPEED)
+    print()
     house_entrance_options()
+
 
 def house_entrance_options():
     terminal_typing_effect("Choose from the options below \n", TERMINAL_TYPING_SPEED)
@@ -66,7 +68,6 @@ def house_path_1():
             house_path_1()
 
     terminal_typing_effect("You continue searching around the dining room\n", TERMINAL_TYPING_SPEED)
-    terminal_typing_effect("There is a set of drawers to your left, do you want to open them\n", TERMINAL_TYPING_SPEED)
     search_dining_room()
 
 def house_path_2():
@@ -96,8 +97,9 @@ def doors_upstairs():
     terminal_typing_effect("#1.Open door 1\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#2.Open door 2\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("#3.Open door 3\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#4.Go downstairs\n", TERMINAL_TYPING_SPEED)
 
-    exploreDoorInput = input("Choose door 1/2/3\n")
+    exploreDoorInput = input("Choose door 1/2/3/4\n")
 
     if(exploreDoorInput == '1'):
         open_door_1()
@@ -108,6 +110,8 @@ def doors_upstairs():
     elif(exploreDoorInput == '3'):
         open_door_3()
         #this room has the map to the end
+    elif(exploreDoorInput == '4'):
+        explore_rooms_go_downstairs()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
         doors_upstairs()
@@ -125,12 +129,20 @@ def open_door_2():
     terminal_typing_effect("You open the second door\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("There doesn't seem to be anything in here\n", TERMINAL_TYPING_SPEED)
     terminal_typing_effect("You come back out into the landing\n", TERMINAL_TYPING_SPEED)
-    doors_upstairs()
+    terminal_typing_effect("1. Explore other rooms?\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("2. Go downstairs\n", TERMINAL_TYPING_SPEED)
+    goDownstairs = input("Choose 1/2\n")
+    if (goDownstairs == '1'):
+        doors_upstairs()
+    elif(goDownstairs == '2'):
+        explore_rooms_go_downstairs()
 
 def open_door_3():
     if("key" in inventory_array):
-        terminal_typing_effect("You enter the room 3, and see a map in the room\n", TERMINAL_TYPING_SPEED)
-        terminal_typing_effect("There is nothing in this room\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("You enter the room 3, and see a note on the bedside locker\n", TERMINAL_TYPING_SPEED)
+        print()
+        terminal_typing_effect('"The sun rises in the EAST"\n', TERMINAL_TYPING_SPEED)
+        print()
         terminal_typing_effect("You return back onto the upstairs landing\n", TERMINAL_TYPING_SPEED)
         doors_upstairs()
         #
@@ -140,4 +152,4 @@ def open_door_3():
         terminal_typing_effect("You need a key to enter this room!!\n", TERMINAL_TYPING_SPEED)
         terminal_typing_effect("Go find the key!\n", TERMINAL_TYPING_SPEED)
         explore_rooms_go_downstairs()
-#create function that brings user to three doors downstairs
+

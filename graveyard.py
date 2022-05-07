@@ -138,18 +138,23 @@ def droneBattery():
     exit()
 
 
+
 def graveyard_east_path():
-    terminal_typing_effect('"I think I should listen for the drone again Y/N"\n', TERMINAL_TYPING_SPEED)
 
-    eastPathListenForDrone = input("Do you want to listen for the drone again Y/N\n").lower()
+    terminal_typing_effect("You continue walking, you come to a fork in the road\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("Which path do you want to follow\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#1. Left\n", TERMINAL_TYPING_SPEED)
+    terminal_typing_effect("#2. Right\n", TERMINAL_TYPING_SPEED)
 
-    if (eastPathListenForDrone == 'y'):
-        droneBattery()
-        terminal_typing_effect("You hear the drone much clearer now \n", TERMINAL_TYPING_SPEED)
+    eastPathChoosePath = input("Choose 1/2\n")
+
+    if (eastPathChoosePath == '1'):
+        terminal_typing_effect("You continue walking down the path\n", TERMINAL_TYPING_SPEED)
         found_drone()
-    elif (eastPathListenForDrone == 'n'):
-        terminal_typing_effect("ok, it may be a little harder to find the drone\n", TERMINAL_TYPING_SPEED)
-
+    elif (eastPathChoosePath == '2'):
+        terminal_typing_effect("You continue down this path. You hear movement in the bushes\n", TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("A shake bites you\n", TERMINAL_TYPING_SPEED)
+        you_died()
     else:
         terminal_typing_effect("ENTER A PATH\n", TERMINAL_TYPING_SPEED)
         graveyard_east_path()
@@ -182,6 +187,7 @@ def found_drone():
         graveyard_entrance_gate()
         terminal_typing_effect("With the drone in your hand you push the cemetery gate open, and vow never to return\n",
                                TERMINAL_TYPING_SPEED)
+        terminal_typing_effect("Congratulations you win!\n", TERMINAL_TYPING_SPEED)
         you_win()
 
     else:

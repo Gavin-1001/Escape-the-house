@@ -1,6 +1,5 @@
 from helperFunctions import you_died, terminal_typing_effect, TERMINAL_TYPING_SPEED
 
-
 class Player():
     def __init__(self, health, attack):
         self.health = health
@@ -45,7 +44,9 @@ def exit_message():
     terminal_typing_effect("Thanks for playing!!\n", TERMINAL_TYPING_SPEED)
 
     playAgain = input("Do you want to play again? Y/N\n").lower()
-    if(playAgain == 'Y'):
-        print()
-    elif(playAgain == 'N'):
+    if(playAgain == 'y'):
+        from run import start_game
+        start_game()
+    elif(playAgain == 'n'):
         terminal_typing_effect("Thanks for playing!\n", TERMINAL_TYPING_SPEED)
+        type(exit)
