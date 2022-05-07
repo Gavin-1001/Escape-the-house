@@ -13,8 +13,10 @@
 A text based terminal game where the user can play the game from the command line. The aim of the game is to find the drone and find a way out. Find items to use to defend against mobs and unlock doors to explore. 
 
 ## Design
-!!Talk about modularizing of code!!
-Flow Chart here
+#### Modular Code
+* Because of the scale of this project, modularised code is essential as it allows for code reuseability.
+
+* The project [Flow chart](https://github.com/Gavin-1001/Escape-the-attic/blob/main/assets/flowchart/Flowchart.pdf)
 
 
 ### Goals
@@ -24,19 +26,24 @@ The goal of this application was to create an adventure text-based game using th
 There is no specific target audience for this project. But I do believe that it would be attractive to users born between the 1960's and 1990's as they would of grown up with text-based games. 
 
 ## Technologies
-Python
-Python modules(sys, time, os)
+* [Python](https://www.python.org/)
+* Python modules([sys](https://docs.python.org/3/library/sys.html), [time](https://docs.python.org/3/library/time.html), [os](https://docs.python.org/3/library/os.html))
 
 ### Other libraries used
-* Colorama
 * Github
+* [PyCharm](https://www.jetbrains.com/pycharm/)
+* [Git](https://git-scm.com/)
+* [Heroku](https://www.heroku.com/)
+
 
 ## Bugs
 * The only issue in the project is that there is a import statement that has been imported locally, although it is not best practice, I removed the import and placed it at the top along with the other imports and I got a circular import error, I removed all imports and reimported everything again and still got the same error . The local import statements are listed below:
-1. forest.py line 45
-2. forest.py line 83
-3. house.py line 37
-4. helperFunction.py line 217
+  1. forest.py line 45
+  2. forest.py line 83
+  3. house.py line 37
+  4. helperFunction.py line 217
+
+* Another bug I have encountered is clearing the terminal between sessions. I have the function calls, but it is not executing when ran.
 
 
 ## Testing
@@ -44,14 +51,16 @@ Python modules(sys, time, os)
 * My chosen IDE for this project was PyCharm, which has a built in PEP 8 validator, the only PEP8 errors I encountered were W605 escape sequences which were associated with the acsii art in helperFunctions.py, and to remove redundant parentheses. I have kept the brackets in place as I have come from 5 years of Java and my brain is hardwired to brackets around flow control structures. 
 * Screenshots can be found [here](https://github.com/Gavin-1001/Escape-the-attic/tree/main/assets/images)
 
+
 ## Deployment
 As part of the project, this application had to be deployed on Heroku. Below are the steps to successfully deploy this application to Heroku. 
+
 
 ### Creating the Heroku app
 
 * Before you begin deploying to Heroku, please check that your code in error free before continuing. 
 * In the terminal you need to enter the command below, as Heroku will use the .txt file to import the required dependencies. 
- `pip3 freeze > requirements.txt`
+* `pip3 freeze > requirements.txt`
 * If you do not have a Heroku account create one [here](https://signup.heroku.com/). Or alternatively you can login to your Heroku account. 
 * Once you have created your account or signed in. Navigate to the Heroku dashboard. 
 * From the dashboard select the "New" button in the top right hand side of the screen. 
