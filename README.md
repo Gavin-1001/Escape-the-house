@@ -26,12 +26,14 @@ The goal of this application was to create an adventure text-based game using th
 There is no specific target audience for this project. But I do believe that it would be attractive to users born between the 1960's and 1990's as they would of grown up with text-based games. 
 
 ## Technologies
-Python
-Python modules(sys, time, os)
+* [Python](https://www.python.org/)
+* Python modules([sys](https://docs.python.org/3/library/sys.html), [time](https://docs.python.org/3/library/time.html), [os](https://docs.python.org/3/library/os.html))
 
 ### Other libraries used
-* Colorama
 * Github
+* [PyCharm](https://www.jetbrains.com/pycharm/)
+* [Git](https://git-scm.com/)
+* [Heroku](https://www.heroku.com/)
 
 ## Bugs
 * The only issue in the project is that there is a import statement that has been imported locally, although it is not best practice, I removed the import and placed it at the top along with the other imports and I got a circular import error, I removed all imports and reimported everything again and still got the same error . The local import statements are listed below:
