@@ -53,8 +53,27 @@ There is no specific target audience for this project. But I do believe that it 
 ## Testing
 ### Pep8 validation
 * My chosen IDE for this project was PyCharm, which has a built in PEP 8 validator, the only PEP8 errors I encountered were W605 escape sequences which were associated with the acsii art in helperFunctions.py, and to remove redundant parentheses. I have kept the brackets in place as I have come from 5 years of Java and my brain is hardwired to brackets around flow control structures. 
-* Screenshots can be found [here](https://github.com/Gavin-1001/Escape-the-attic/tree/main/assets/images)
 
+* Run.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/run_py_PEP8.png" alt="Run.py" width="550"/>
+
+* Forest.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/forest_py_PEP8.png" alt="Forest.py" width="550"/>
+
+* Classes.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/classes_py_PEP8.png" alt="Classes.py" width="550"/>
+
+* Game_Intro_Log.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/game_intro_log_py_PEP8.png" alt="game_intro_log.py" width="550"/>
+
+* Graveyard.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/graveyard_py_PEP8.png" alt="graveyard.py" width="550"/>
+
+* HelperFunctions.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/helperFunctions_py_PEP8.png" alt="helperFunctions.py" width="550"/>
+
+* House.py
+<img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/house_py_PEP8.png" alt="house.py" width="550"/>
 
 ## Deployment
 As part of the project, this application had to be deployed on Heroku. Below are the steps to successfully deploy this application to Heroku. 
