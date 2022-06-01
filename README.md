@@ -29,6 +29,10 @@ There is no specific target audience for this project. But I do believe that it 
 * [Python](https://www.python.org/)
 * Python modules([sys](https://docs.python.org/3/library/sys.html), [time](https://docs.python.org/3/library/time.html), [os](https://docs.python.org/3/library/os.html))
 
+* The sys, time modules were used to create a narrator effect in the terminal, by creating a function that would be passed with the text inside and then using CharAt would output each character at a particular speed set by the developer, in this case it was 0.025 seconds. 
+
+* The os module was used to clear the terminal randomly. As stated in the bugs section I have been unable to implement this function.
+
 ### Other libraries used
 * Github
 * [PyCharm](https://www.jetbrains.com/pycharm/)
