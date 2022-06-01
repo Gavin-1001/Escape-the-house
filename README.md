@@ -112,7 +112,7 @@ As of 20/04/2022 Github has been hacked and OAuth tokens have been stolen, to st
 To add some graphic to the application, I decided to use ascii art to give some effect to the user experience. 
 
 #### 2. [Stack Overflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
-During the initial design phase of the project, I wanted to make the application as nostalgic as possible. I wanted to give the impression that the text begin displayed was a narriator talking to the user. To do this I created a typing effect function called terminal_typing_effect which took text and the speed of the output text as parameters. This would take each char and sleep it for 0.05 seconds and then display it, giving the narriator effect.
+During the initial design phase of the project, I wanted to make the application as nostalgic as possible. I wanted to give the impression that the text begin displayed was a narriator talking to the user. To do this I created a typing effect function called typing_effect which took text and the speed of the output text as parameters. This would take each char and sleep it for 0.05 seconds and then display it, giving the narriator effect.
 
 #### 3. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
 As this project is being hosted on Heroku, the boilerplate code is provided by Code Institute in order to be compatiable with Heroku, and display a terminal on screen for the user to access the application
