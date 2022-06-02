@@ -75,6 +75,13 @@ There is no specific target audience for this project. But I do believe that it 
 * House.py
 <img src="https://github.com/Gavin-1001/Escape-the-house/blob/main/assets/images/house_py_PEP8.png" alt="house.py" width="550"/>
 
+[Testing Sheet](https://docs.google.com/spreadsheets/d/1q0Zs_vZyZtG1gy5oCwwY37hHN6J0hfWnKpmeNqPuzFA/edit?usp=sharing) 
+I have attached a testing sheet that I have created to manually test the application.
+
+User testing feedback:
+1. The game reminds me of my childhood playing Colossal Cave Adventure and Zork.
+2. I really enjoyed the game, it was really interactive!
+
 ## Deployment
 As part of the project, this application had to be deployed on Heroku. Below are the steps to successfully deploy this application to Heroku. 
 
